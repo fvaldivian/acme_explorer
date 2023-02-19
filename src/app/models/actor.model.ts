@@ -1,5 +1,5 @@
 import {Schema, model} from 'mongoose'
-import {Actor} from "../types/actor";
+import Actor from "../types/actor";
 import validator from 'validator';
 import bcrypt from 'bcrypt';
 

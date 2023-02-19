@@ -1,4 +1,4 @@
-export interface Actor {
+export default interface Actor {
     name: string,
     surname: string,
     email: string,
