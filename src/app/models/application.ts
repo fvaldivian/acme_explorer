@@ -1,14 +1,15 @@
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });
-const mongoose_1 = require("mongoose");
-const tripApplicationSchema = new mongoose_1.Schema({
-    create_date: {
+import {model, Schema} from "mongoose";
+import TripApplication from "../types/application";
+
+const tripApplicationSchema = new Schema({
+    create_date:{
         type: Date,
         default: Date.now
     },
     status: {
         type: String,
         default: 'PENDING',
+        require: "Kindly enter the application status",
         enum: ['PENDING', 'REJECTED', 'CANCELLED', 'ACCEPTED', 'DUE']
     },
     comments: {
@@ -19,13 +20,15 @@ const tripApplicationSchema = new mongoose_1.Schema({
         type: Boolean,
         required: false
     },
-    reason: {
+    reason:{
         type: String,
         required: false
     },
-    isPaid: {
+    isPaid:{
         type: Boolean,
         require: false
     }
-});
-exports.default = (0, mongoose_1.model)('Trip_Application', tripApplicationSchema);
+})
+
+
+export default model<TripApplication>('Application', tripApplicationSchema)
