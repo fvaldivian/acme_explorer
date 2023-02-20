@@ -19,15 +19,15 @@ const FinderSchemma = new Schema({
         require: 'Kindly enter highest price',
         validate: [higherPriceValidator, 'Higher price must be lower or equal than lower price']
     },
-    from_Date: {
+    from_date: {
         type: Date,
         require: 'Kindly enter a start Date',
-        validate: [fromDateValidator, 'From date must be lower or equal than to date'],
+        //validate: [fromDateValidator, 'From date must be lower or equal than to date'],
     },
     to_date: {
         type: Date,
         require: 'Kindly enter an end Date',
-        validate: [toDateValidator, 'To date must be lower or equal than from date']
+        //validate: [toDateValidator, 'To date must be higher or equal than from date']
 
     }
 })
