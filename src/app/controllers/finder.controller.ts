@@ -41,7 +41,7 @@ class FinderController {
       );
       console.log(newFinder);
       if (newFinder.matchedCount === 0) {
-        return res.status(404).send("Application not found");
+        return res.status(404).send("Finder not found");
       } else return res.send(newFinder);
     } catch (err) {
       res.status(500).send(err);
@@ -53,7 +53,8 @@ class FinderController {
     const { id } = req.params;
     try {
       const result = await finderModel.findByIdAndDelete(id);
-      if (!result) {
+      console.warn(result)
+      if (result===null) {
         return res.status(404).json({ msg: "Fidner not found" });
       }
       return res.status(200).json(result);
@@ -62,7 +63,7 @@ class FinderController {
     }
   };
 
-  public searchTrips = function (req: Request, res: Response) {
+  public applySearch = function (req: Request, res: Response) {
     const { id } = req.params;
     finderModel.findById(id, function (err: any, finder: Finder) {
       if (err) {
