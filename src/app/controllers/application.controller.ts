@@ -1,5 +1,5 @@
 import { Request, Response } from "express";
-import Application, { interTripApplication } from "../models/application";
+import Application from "../models/application";
 
 
 
