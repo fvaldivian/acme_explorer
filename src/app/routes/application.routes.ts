@@ -1,6 +1,6 @@
 import { Router } from "express";
 import ApplicationController from "../controllers/application.controller";
-import { createValidator } from "../validators/ApplicationValidation";
+import { createValidator } from "../validators/ApplicationValidator";
 import handleValidation from "../middlewares/ValidationMiddleware";
 import { Routes } from "../util/routes.interface";
 

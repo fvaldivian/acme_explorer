@@ -1,11 +1,5 @@
 import {model, Schema} from "mongoose";
-
-export interface interConfig {
-    cache_time: number;
-    dashboard_time: number;
-    search_result: number;
-    sponsorship_price: number;
-}
+import interConfig from '../types/config'
 
 const ConfigurationSchema = new Schema({
         cache_time: {
