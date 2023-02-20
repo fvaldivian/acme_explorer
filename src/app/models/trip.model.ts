@@ -1,10 +1,10 @@
 import {model, Schema} from "mongoose";
 import Stage from '../types/stage'
 import Trip from "../types/trip";
-import {StageSchema} from "./stage";
 import dateFormat from "dateformat";
 import {customAlphabet} from "nanoid";
 import {uppercase} from "nanoid-dictionary";
+import {StageSchema} from "./stage.model";
 
 export const TripSchema = new Schema<Trip>({
     ticker: {

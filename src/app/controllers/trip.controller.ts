@@ -1,7 +1,7 @@
 import {Request, Response} from "express";
-import {TripModel} from "../models/trip";
 import {ActorModel} from "../models/actor.model";
 import {PipelineStage} from "mongoose";
+import {TripModel} from "../models/trip.model";
 
 
 class TripController {

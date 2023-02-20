@@ -1,22 +1,15 @@
 import {model, Schema} from "mongoose";
 import {ActorModel} from './actor.model';
 import Actor from '../types/actor'
-import interTrip from '../types/trip'
-import {TripSchema} from "./trip";
-
-export interface interSponsorship {
-    banner: String
-    payed: boolean
-    sponsor: Actor
-    trip: interTrip
-}
+import {TripSchema} from "./trip.model";
+import Sponsorship from "../types/sponsor";
 
 const SponsorshipSchemma = new Schema({
     banner: {
         type: String,
         require: true
     },
-    payed:{
+    payed: {
         type: Boolean,
     },
     sponsor: {
@@ -34,15 +27,15 @@ const SponsorshipSchemma = new Schema({
 
 SponsorshipSchemma.pre('save', async function (callback) {
 
-    const sponsor = await ActorModel.findById({_id: this._id}); 
+    const sponsor = await ActorModel.findById({_id: this._id});
     if (sponsor?.activated && sponsor.role === 'SPONSOR') {
         console.log("sponsor is active");
         this.payed = true;
-    }else{
+    } else {
         console.log("isActivated false then sponsor ship is not payed");
     }
     console.log(this.payed);
     callback();
 });
 
-export default model<interSponsorship>('Sponsorship', SponsorshipSchemma)
+export default model<Sponsorship>('Sponsorship', SponsorshipSchemma)
