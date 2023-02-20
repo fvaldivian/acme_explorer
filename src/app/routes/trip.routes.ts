@@ -1,8 +1,8 @@
 import {Router} from "express";
 import TripController from "../controllers/trip.controller";
-import {createValidator} from "../validators/TripValidation";
 import {Routes} from "../util/routes.interface";
 import handleValidation from "../middlewares/ValidationMiddleware";
+import {createValidator} from "../validators/TripValidator";
 
 class TripRoutes implements Routes {
     public path = "/v1/trips";

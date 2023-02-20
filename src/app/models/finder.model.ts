@@ -1,8 +1,8 @@
 import {model, Schema} from "mongoose";
 import Finder from '../types/finder'
-import {lowerPriceValidator, higherPriceValidator, fromDateValidator, toDateValidator} from "../validators/finderCustomValidators";
+import {lowerPriceValidator, higherPriceValidator} from "../validators/finderCustomValidators";
 
-const FinderSchemma = new Schema({
+const FinderSchema = new Schema({
     keyword: {
         type: String,
         require: 'Kindly enter the keyword',
@@ -21,15 +21,12 @@ const FinderSchemma = new Schema({
     },
     from_date: {
         type: Date,
-        require: 'Kindly enter a start Date',
-        //validate: [fromDateValidator, 'From date must be lower or equal than to date'],
+        require: 'Kindly enter a start Date'
     },
     to_date: {
         type: Date,
-        require: 'Kindly enter an end Date',
-        //validate: [toDateValidator, 'To date must be higher or equal than from date']
-
+        require: 'Kindly enter an end Date'
     }
 })
 
-export default model<Finder>('Finder', FinderSchemma)
+export default model<Finder>('Finder', FinderSchema)
