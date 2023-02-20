@@ -6,11 +6,12 @@ export default interface Trip {
     description: string;
     price: number;
     list_of_requirements: string[];
-    start_date: String;
-    end_date: string;
+    start_date: Date;
+    end_date: Date;
     pictures: string[];
     published: boolean
     cancelled: boolean;
     reason: string;
-    stages: Stage[]
+    stages: Stage[];
+    manager: any
   }

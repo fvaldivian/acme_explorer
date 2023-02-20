@@ -1,8 +1,8 @@
 import {model, Schema} from "mongoose";
 import {ActorModel} from './actor.model';
 import Actor from '../types/actor'
-import Trip from './trip';
 import interTrip from '../types/trip'
+import {TripSchema} from "./trip";
 
 export interface interSponsorship {
     banner: String
@@ -26,7 +26,7 @@ const SponsorshipSchemma = new Schema({
     },
 
     trip: {
-        type: Trip,
+        type: TripSchema,
         ref: 'Trip'
     }
 })
