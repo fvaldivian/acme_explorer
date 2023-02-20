@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import Application from "../models/application";
-
+import Application from "../models/application.model";
+import TripApplication from "../types/application";
 
 
 class ApplicationController {
@@ -50,7 +50,7 @@ public updateApplication = async (req: Request, res: Response) => {
       { status, comments }
     );
     console.log(newApplication);
-    if (newApplication.matchedCount === 0) {
+    if(newApplication.matchedCount === 0) {
       return res.status(404).send("Application not found");
     } else return res.send(newApplication);
   } catch (err) {
