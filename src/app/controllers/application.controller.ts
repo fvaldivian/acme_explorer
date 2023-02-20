@@ -1,15 +1,14 @@
 import {Request, Response} from "express";
-import Application from "../models/application.model";
-
+import {ApplicationModel} from "../models/application.model";
 
 class ApplicationController {
 
-    public addTripApplication = async (req: Request, res: Response) => {
+    public addApplication = async (req: Request, res: Response) => {
         if (!req.body.status) {
             return res.status(400).json({msg: "Please, insert a valid application"});
         }
         try {
-            const newTripApplication = new Application(req.body);
+            const newTripApplication = new ApplicationModel(req.body);
             await newTripApplication.save();
             return res.status(201).json(newTripApplication);
         } catch (err) {
@@ -19,7 +18,7 @@ class ApplicationController {
 
     public getAllApplications = async (req: Request, res: Response) => {
         try {
-            const applications = await Application.find();
+            const applications = await ApplicationModel.find();
             return res.send(applications);
         } catch (err) {
             res.status(500).send(err);
@@ -29,7 +28,7 @@ class ApplicationController {
     public getApplicationById = async (req: Request, res: Response) => {
         const {id} = req.params;
         try {
-            const applicationFound = await Application.findById(id);
+            const applicationFound = await ApplicationModel.findById(id);
             if (applicationFound === null) {
                 return res.status(404).json({msg: "Application not found"});
             } else return res.send(applicationFound);
@@ -41,12 +40,9 @@ class ApplicationController {
     public updateApplication = async (req: Request, res: Response) => {
         const {id} = req.params;
         try {
-            const {status, comments} = req.body;
-            const newApplication = await Application.updateOne(
+            const newApplication = await ApplicationModel.updateOne(
                 {_id: id},
-                {status, comments}
-            );
-            console.log(newApplication);
+            )
             if (newApplication.matchedCount === 0) {
                 return res.status(404).send("Application not found");
             } else return res.send(newApplication);
@@ -58,7 +54,7 @@ class ApplicationController {
     public deleteApplication = async (req: Request, res: Response) => {
         const {id} = req.params;
         try {
-            const result = await Application.findByIdAndDelete(id);
+            const result = await ApplicationModel.findByIdAndDelete(id);
             if (!result) {
                 return res.status(404).json({msg: "Application not found"});
             }
@@ -76,15 +72,35 @@ class ApplicationController {
             const {id} = req.params;
             const {reason} = req.body;
             const denied = true;
-            const newApplication = await Application.updateOne(
+            const status = 'REJECTED';
+            const newApplication = await ApplicationModel.updateOne(
                 {_id: id},
-                {reason, denied}
+                {reason, denied, status}
             );
             return res.send(newApplication);
         } catch (err: any) {
             return res.status(500).send(err);
         }
     };
+
+    public approvedApplication = async (req: Request, res: Response) => {
+        if (!req.body.reason) {
+            return res.status(400).json({msg: "Send approved reason"});
+        }
+        try {
+            const {id} = req.params;
+            const {reason} = req.body;
+            const denied = false;
+            const status = 'ACCEPTED';
+            const newApplication = await ApplicationModel.updateOne(
+                {_id: id},
+                {reason, denied, status}
+            );
+            return res.send(newApplication);
+        } catch (err: any) {
+            return res.status(500).send(err);
+        }
+    }
 }
 
-export default ApplicationController
+export default ApplicationController;

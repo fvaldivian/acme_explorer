@@ -1,4 +1,4 @@
-export default interface TripApplication {
+export interface Application {
     create_date: Date
     status: string
     comments: string

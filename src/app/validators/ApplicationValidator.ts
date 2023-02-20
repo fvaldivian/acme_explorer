@@ -1,19 +1,35 @@
-import { check } from "express-validator";
+import {check} from "express-validator";
 
 const createValidator = [
-  check("status")
-    .exists({ checkNull: true, checkFalsy: true })
-    .isString()
-    .isIn(['PENDING', 'REJECTED', 'CANCELLED', 'ACCEPTED', 'DUE']),
-  check("comments")
-    .optional()
-    .isString()
-    .trim()
-    .escape(),
-  check("reason")
-    .optional()
-    .isString()
-    .trim()
-    .escape(),
+    check("create_date")
+        .optional()
+        .isDate()
+        .trim()
+        .escape(),
+    check("status")
+        .optional()
+        .default("PENDING")
+        .isString()
+        .trim()
+        .isIn(["PENDING", "REJECTED", "CANCELLED", "ACCEPTED", "DUE"]),
+    check("comments")
+        .exists({checkNull: true, checkFalsy: true})
+        .isString()
+        .trim()
+        .escape(),
+    check("denied")
+        .isBoolean()
+        .escape(),
+    check("reason")
+        .optional()
+        .isString()
+        .trim()
+        .escape(),
+    check("isPaid")
+        .optional()
+        .default('0')
+        .isBoolean()
+        .escape(),
 ];
-export { createValidator };
+
+export {createValidator};
