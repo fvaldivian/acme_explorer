@@ -70,7 +70,7 @@ class ApplicationController {
 
     public deniedApplication = async (req: Request, res: Response) => {
         if (!req.body.reason) {
-            return res.status(400).json({msg: "Send denie reason"});
+            return res.status(400).json({msg: "Send denied reason"});
         }
         try {
             const {id} = req.params;

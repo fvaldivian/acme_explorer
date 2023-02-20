@@ -90,13 +90,4 @@ TripSchema.pre<Trip>('save', function (next) {
     next()
 });
 
-TripSchema.pre<Trip>('save', function (next) {
-    let totalPrice = 0
-    this.stages.map((stage: Stage) => {
-        totalPrice += stage.price
-    })
-    this.price = totalPrice;
-    next()
-});
-
 export const TripModel = model<Trip>("Trip", TripSchema);

@@ -1,5 +1,4 @@
 import { check } from "express-validator";
-import { isString } from "util";
 
 const createValidator = [
   check("keyword")
@@ -15,7 +14,6 @@ const createValidator = [
     .isNumeric()
     .trim()
     .escape(),
- 
   check("to_date")
     .exists({ checkNull: true, checkFalsy: true })
     .trim()
