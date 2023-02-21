@@ -1,8 +1,5 @@
 import {Request, Response} from "express";
 import finderModel from "../models/finder.model";
-import Finder from "../types/finder";
-import Trip from "../types/trip";
-import {TripModel} from "../models/trip.model";
 
 class FinderController {
 
@@ -29,7 +26,7 @@ class FinderController {
             return res.status(500).send(error);
         }
     };
-
+    
     public updateFinder = async (req: Request, res: Response) => {
         const {id} = req.params;
         try {
@@ -58,31 +55,6 @@ class FinderController {
         } catch (err) {
             return res.status(500).send(err);
         }
-    };
-
-    public applySearch = (req: Request, res: Response) => {
-        const {id} = req.params;
-        finderModel.findById(id, (err: any, finder: Finder) => {
-            if (err) {
-                res.send(err);
-            } else {
-                TripModel.find(
-                    {
-                        price: {$gt: finder.low_price, $lt: finder.high_price},
-                        start_date: {$gt: finder.from_date},
-                        end_date: {$lt: finder.to_date},
-                        $text: {$search: finder.keyword},
-                    },
-                    (err1: any, trips: Trip) => {
-                        if (err1) {
-                            res.send(err1);
-                        } else {
-                            res.send(trips);
-                        }
-                    }
-                );
-            }
-        });
     };
 }
 

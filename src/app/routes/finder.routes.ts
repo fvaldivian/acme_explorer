@@ -12,7 +12,6 @@ class FinderRoutes implements Routes {
     constructor() {
         this.initializeRoutes();
     }
-
     private initializeRoutes() {
         this.router.post(
             this.path,
@@ -21,14 +20,12 @@ class FinderRoutes implements Routes {
             this.controller.createFidner
         );
         this.router.get(this.path, this.controller.searchFidner);
-
         this.router.put(
             `${this.path}/:id`,
             handleValidation,
             this.controller.updateFinder
         );
         this.router.delete(`${this.path}/:id`, handleValidation, this.controller.deleteFinder);
-        this.router.get(`${this.path}/search`, this.controller.applySearch);
     }
 }
 
