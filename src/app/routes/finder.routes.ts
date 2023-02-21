@@ -5,7 +5,7 @@ import {Routes} from "../util/routes.interface";
 import handleValidation from "../middlewares/ValidationMiddleware";
 
 class FinderRoutes implements Routes {
-    public path = "/v1/finder";
+    public path = '/v1/finder';
     public router = Router();
     public controller = new FinderController();
 
@@ -23,13 +23,12 @@ class FinderRoutes implements Routes {
         this.router.get(this.path, this.controller.searchFidner);
 
         this.router.put(
-            `${this.path}:id`,
+            `${this.path}/:id`,
             handleValidation,
             this.controller.updateFinder
         );
-        this.router.delete(`${this.path}:id`, handleValidation, this.controller.deleteFinder);
-
-        this.router.get(this.path, this.controller.applySearch);
+        this.router.delete(`${this.path}/:id`, handleValidation, this.controller.deleteFinder);
+        this.router.get(`${this.path}/search`, this.controller.applySearch);
     }
 }
 

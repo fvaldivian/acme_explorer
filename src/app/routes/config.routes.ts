@@ -26,6 +26,21 @@ class ConfigRoutes implements Routes {
             handleValidation,
             this.controller.updateConfiguration
         );
+        this.router.patch(
+            `${this.path}/:id/cache`,
+            handleValidation,
+            this.controller.updateCacheTime
+        );
+        this.router.patch(
+            `${this.path}/:id/results`,
+            handleValidation,
+            this.controller.updateSearchResult
+        );
+        this.router.patch(
+            `${this.path}/:id/flatrate`,
+            handleValidation,
+            this.controller.updateSponsorshipPrice
+        );
     }
 }
 
