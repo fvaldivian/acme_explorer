@@ -2,6 +2,7 @@ import { Request, Response } from "express";
 import configModel from "../models/config.model";
 
 class ConfigController {
+  
   public addConfiguration = async (req: Request, res: Response) => {
     if (!req.body.cache_time || !req.body.dashboard_time || !req.body.search_result || !req.body.sponsorship_price) {
       return res

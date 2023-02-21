@@ -14,17 +14,20 @@ class ActorRoutes implements Routes {
     }
 
     private initializeRoutes() {
-        this.router.post(this.path,createValidator,handleValidation,this.controller.create);
+        this.router.post(this.path, createValidator, handleValidation, this.controller.create);
+        this.router.post(`${this.path}/explorer`,createValidator,handleValidation,this.controller.createExplorer);
+        this.router.post(`${this.path}/administrator`, createValidator, handleValidation, this.controller.createAdministrator);
+        this.router.post(`${this.path}/manager`, createValidator, handleValidation, this.controller.createManager);
+        this.router.get(`${this.path}/:id`, this.controller.getActorById);
         this.router.get(this.path, this.controller.getAll);
-        this.router.get(`${this.path}/:id`, this.controller.get);
-        this.router.put(`${this.path}/:id`, createValidator,handleValidation,this.controller.update);
-        this.router.delete(`${this.path}/:id`, this.controller.delete);
+        this.router.get(`${this.path}/list`, this.controller.listManagers);
+        this.router.put(`${this.path}/:id`, createValidator,handleValidation, this.controller.update);
         this.router.patch(`${this.path}/:id/disable`, this.controller.disabledActor);
         this.router.patch(`${this.path}/:id/activate`, this.controller.activateActor);
-        this.router.get(this.path, this.controller.getAll);
-        this.router.post(`${this.path}/explorer`,createValidator,handleValidation,this.controller.createExplorer);
-        this.router.post(`${this.path}/administrator`,createValidator,handleValidation,this.controller.createAdministrator);
-        this.router.get(`${this.path}/managers`, this.controller.listManagers);
+        this.router.delete(`${this.path}/:id`, this.controller.delete);
+        
+        
+        
     }
 }
 

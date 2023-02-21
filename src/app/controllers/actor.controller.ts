@@ -56,6 +56,33 @@ class ActorController {
         }
     };
 
+    public createManager = async (req: Request, res: Response) => {
+        if (
+            !req.body.name ||
+            !req.body.surname ||
+            !req.body.email ||
+            !req.body.password
+        ) {
+            return res.status(400).json({msg: "Please send a valid actor"});
+        }
+        const { name, surname, email, password, phone_number, address} = req.body
+        const role = 'MANAGER'
+        const activated = true
+        const newActor = new ActorModel({role, name, surname, email, password, phone_number, address, activated});
+        try {
+            const actor = await newActor.save();
+            res.json(actor);
+        } catch (err: any) {
+            if (err.keyPattern.email === 1) {
+                res.status(422).send({msg: "User already exist"});
+            }else if (err.name === "ValidationError") {
+                res.status(422).send(err);
+            } else {
+                res.status(500).send(err);
+            }
+        }
+    };
+
     public createAdministrator = async (req: Request, res: Response) => {
         if (
             !req.body.name ||
@@ -90,7 +117,7 @@ class ActorController {
         }
     };
 
-    public get = async (req: Request, res: Response) => {
+    public getActorById = async (req: Request, res: Response) => {
         try {
             const id = req.params.id;
             const actorFound = await ActorModel.findById(id).exec();
@@ -198,10 +225,12 @@ class ActorController {
         }
     }
 
-    public listManagers = async (req: Request, res: Response) => {
+    public listManagers = async (_req: Request, res: Response) => {
         try {
-            const actors = await ActorModel.aggregate([ { $match : { role : "MANAGER" } } ]);
-            res.json(actors);
+            const actors = await ActorModel.aggregate(
+                [ { $match : { role : "MANAGER" } } ]
+            );
+            res.send(actors)
         } catch (err) {
             res.status(500).send(err);
         }
