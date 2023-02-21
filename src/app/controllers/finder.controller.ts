@@ -51,11 +51,10 @@ class FinderController {
         const {id} = req.params;
         try {
             const result = await finderModel.findByIdAndDelete(id);
-            console.warn(result)
             if (result === null) {
-                return res.status(404).json({msg: "Fidner not found"});
+                res.status(404).json({msg: "Fidner not found"});
             }
-            return res.status(200).json(result);
+            res.status(200).json(result);
         } catch (err) {
             return res.status(500).send(err);
         }

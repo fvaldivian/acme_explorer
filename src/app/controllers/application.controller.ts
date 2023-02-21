@@ -82,7 +82,7 @@ class ApplicationController {
             return res.status(500).send(err);
         }
     };
-
+    
     public approvedApplication = async (req: Request, res: Response) => {
         if (!req.body.reason) {
             return res.status(400).json({msg: "Send approved reason"});

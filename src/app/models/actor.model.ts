@@ -62,6 +62,7 @@ actorSchema.pre('save', function (callback) {
     })
 })
 
+actorSchema.index({role: 'text'});
 
 actorSchema.methods.verifyPassword = function (password: string, cb: any) {
     bcrypt.compare(password, this.password, (err, isMatch) => {

@@ -30,10 +30,6 @@ const createValidator = [
     .isString()
     .trim()
     .escape(),
-  check("role")
-    .exists({ checkNull: true, checkFalsy: true })
-    .isString()
-    .isIn(["EXPLORER", "MANAGER", "ADMINISTRATOR", "SPONSOR"]),
 ];
 
 export { createValidator };
