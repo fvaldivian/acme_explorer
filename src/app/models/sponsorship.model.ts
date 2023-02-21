@@ -36,6 +36,6 @@ SponsorshipSchemma.pre('save', async function (callback) {
     }
     console.log(this.payed);
     callback();
-});
+})
 
-export default model<Sponsorship>('Sponsorship', SponsorshipSchemma)
+export const SponsorshipModel = model<Sponsorship>('Sponsorship', SponsorshipSchemma)
