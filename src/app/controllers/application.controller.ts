@@ -1,5 +1,7 @@
 import {Request, Response} from "express";
 import {ApplicationModel} from "../models/application.model";
+import { ActorModel } from "../models/actor.model";
+import { TripModel } from '../models/trip.model';
 
 class ApplicationController {
 
@@ -7,18 +9,32 @@ class ApplicationController {
         if (!req.body.status) {
             return res.status(400).json({msg: "Please, insert a valid application"});
         }
-        
+        const actor = await ActorModel.findOne({_id: req.body.explorer}).exec();
+        if (!(actor?.role.indexOf("EXPLORER") > -1)) {
+            res.status(401).json({msg: "Actor unauthorized to create an application trip"})
+        }
+        const trip = await TripModel.findOne({_id: req.body.trip}).exec();
+        //console.log(trip)
+        const now = new Date();
+        console.log(now)
+        // trip?.start_date < now  || 
+        if (!trip?.published || trip?.cancelled) {
+            res.status(401).json({msg: "Trip unauthorized to create an application trip"})
+        }
+
         try {
             const newTripApplication = new ApplicationModel(req.body);
-            console.log(newTripApplication)
-            await newTripApplication.save();
-            res.json(newTripApplication);
+            //console.log(newTripApplication)
+            const application = await newTripApplication.save()
+            //console.log("Trip application saved to database: ", newTripApplication)
+            //console.log(application)
+            res.status(201).send(application);
         } catch (err) {
             return res.status(500).send(err);
         }
     };
 
-    public getAllApplications = async (req: Request, res: Response) => {
+    public getAllApplications = async (_req: Request, res: Response) => {
         try {
             const applications = await ApplicationModel.find();
             return res.send(applications);
