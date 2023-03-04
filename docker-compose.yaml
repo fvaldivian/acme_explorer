@@ -1,12 +1,30 @@
 version: '3.7'
-
 services:
-  mongo:
-    image: mongo:5.0
+  acme-explorer-api:
+    build: .
+    ports:
+      - "${PORT:-8080}:8080"
+    restart: on-failure
+    environment:
+      - NODE_ENV=development
+      - MONGO_DB_HOST=mongodb
+      - MONGO_DB_PORT=27017
+      - MONGO_DB_USER=user
+      - MONGO_DB_PASSWORD=S3cret
+      - MONGO_DB_NAME=acme_explorer
+      - API_PORT=8080
+    depends_on:
+      - mongodb
+    volumes:
+      - logging:/usr/src/app/logs
+  mongodb:
+    image: "mongo"
+    command: --logpath /var/log/mongodb/db.log
     ports:
       - '27017:27017'
     volumes:
       - mongodbdata:/data/db
+      - logging:/var/log/mongodb
     environment:
       - MONGO_INITDB_ROOT_USERNAME=user
       - MONGO_INITDB_ROOT_PASSWORD=S3cret
@@ -14,3 +32,4 @@ services:
 
 volumes:
   mongodbdata:
+  logging:

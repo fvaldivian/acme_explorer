@@ -1,83 +1,17 @@
 openapi: 3.0.3
 info:
-  title: Route Checker - Api
-  description: Microservice is in charge of searching existing places of interest along the coordinates belonging to a route.
+  title: ACME EXPLORER - API
+  description: FINAL PROJECT
   version: 1.0.0
 servers:
-  - url: http://localhost:8088
-tags:
-  - name: Actor
-    description: Actor description
+  - url: http://localhost:8080
 
 paths:
   /v1/actors:
-    post:
+    get:
       tags:
-        - Interesting places
-      summary: Find interesting places by routeId
-      security:
-        - ApiKeyAuth: [ ]
-      parameters:
-        - name: name
-          surname: surname
-          email: email
-          password: password
-          address: address
-          role: role
-          activated: true
-          phone_number: phone_number
-
+        - Actors
+      summary: Find actors
       responses:
         '200':
           description: Successful
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/places'
-        '401':
-          $ref: "#/components/responses/Unauthorized"
-        '403':
-          $ref: "#/components/responses/Forbidden"
-        '404':
-          $ref: "#/components/responses/NotFound"
-
-components:
-  responses:
-    Unauthorized:
-      description: Unauthorized
-    Forbidden:
-      description: You are not allowed to access this resource
-    NotFound:
-      description: Not found
-
-  securitySchemes:
-    ApiKeyAuth:
-      type: apiKey
-      in: header
-      name: secret_key
-
-  schemas:
-    places:
-      type: object
-      properties:
-        xid:
-          type: string
-        name:
-          type: string
-        kinds:
-          type: string
-        osm:
-          type: string
-        wikidata:
-          type: string
-        point:
-          type: object
-        rate:
-          type: number
-        routeId:
-          type: string
-      required:
-        - xid
-        - kinds
-        - point
-        - routeId
