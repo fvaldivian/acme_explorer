@@ -18,6 +18,7 @@ const createValidator = [
         .trim()
         .escape(),
     check("denied")
+        .optional()
         .isBoolean()
         .escape(),
     check("reason")

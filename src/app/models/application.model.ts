@@ -29,7 +29,8 @@ const applicationSchema = new Schema({
         index: true
     },
     denied: {
-        type: Boolean
+        type: Boolean,
+        required: false
     },
     reason: {
         type: String,
