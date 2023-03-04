@@ -7,10 +7,12 @@ class ApplicationController {
         if (!req.body.status) {
             return res.status(400).json({msg: "Please, insert a valid application"});
         }
+        
         try {
             const newTripApplication = new ApplicationModel(req.body);
+            console.log(newTripApplication)
             await newTripApplication.save();
-            return res.status(201).json(newTripApplication);
+            res.json(newTripApplication);
         } catch (err) {
             return res.status(500).send(err);
         }

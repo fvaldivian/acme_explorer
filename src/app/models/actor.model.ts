@@ -46,6 +46,9 @@ const actorSchema = new Schema<Actor>({
     activated: {
         type: Boolean,
         required: false
+    },
+    firebaseToken: {
+        type: String
     }
 });
 
@@ -63,6 +66,7 @@ actorSchema.pre('save', function (callback) {
 })
 
 actorSchema.index({role: 'text'});
+actorSchema.index({email: 1, password: 1})
 
 actorSchema.methods.verifyPassword = function (password: string, cb: any) {
     bcrypt.compare(password, this.password, (err, isMatch) => {

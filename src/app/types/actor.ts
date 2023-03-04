@@ -7,4 +7,5 @@ export default interface Actor {
     address: string,
     role: any,
     activated: boolean
+    firebaseToken: string
 }
