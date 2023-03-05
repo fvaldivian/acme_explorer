@@ -50,8 +50,6 @@ aws configure set default.region $AwsDefaultRegion
 
 # 4. Download private files
 aws s3 cp s3://bucket-usevilla-do-2023-private/docker-compose.yml /home/ubuntu/
-aws s3 cp s3://bucket-usevilla-do-2023-private/docker-compose.override.yml /home/ubuntu/
-aws s3 cp s3://bucket-usevilla-do-2023-private/firebase-credentials.json /home/ubuntu/key/
 
 #-------------------------------------------------------------------------------
 #DEPLOY APP ENVIRONMENTS
@@ -61,7 +59,7 @@ aws s3 cp s3://bucket-usevilla-do-2023-private/firebase-credentials.json /home/u
 sleep 30
 
 # 2. Deploy production app
-cd /home/ubuntu/ && docker compose -p "app-usevilla-do-2023-prod" -f /home/ubuntu/docker-compose.yml --env-file /home/ubuntu/.env.prod up --build -d
+cd /home/ubuntu/ && docker compose -p "app-usevilla-do-2023-prod" --env-file /home/ubuntu/.env.prod up --build -d
 
 # 3. Introduce a delay not to overload the server(only in low resources servers)
 sleep 30

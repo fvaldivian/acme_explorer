@@ -27,6 +27,18 @@ Parameters:
     Type: String
     Description: default region
     Default: 0
+  FirebaseProjectId:
+    Type: String
+    Description: FirebaseProjectId
+    Default: 0
+  FirebaseClientEmail:
+    Type: String
+    Description: FirebaseClientEmail
+    Default: 0
+  FirebaseAdminPrivateKey:
+    Type: String
+    Description: FirebaseAdminPrivateKey
+    Default: 0
 Resources: 
   InstanceSecurityGroup:
     Type: AWS::EC2::SecurityGroup
@@ -72,15 +84,29 @@ Resources:
         Fn::Base64: 
           !Sub |
             #!/bin/bash
+
+            echo "Preparing production env file"
             echo 'NODE_ENV=production' >> /home/ubuntu/.env.prod
             echo 'API_PORT=${ApiPortProd}' >> /home/ubuntu/.env.prod
             echo 'MONGO_DB_PORT=${MongoPortProd}' >> /home/ubuntu/.env.prod
+            echo 'FIREBASE_PROJECT_ID="${FirebaseProjectId}"' >> /home/ubuntu/.env.prod
+            echo 'FIREBASE_CLIENT_EMAIL="${FirebaseClientEmail}"' >> /home/ubuntu/.env.prod
+            echo 'FIREBASE_ADMIN_PRIVATE_KEY="${FirebaseAdminPrivateKey}"' >> /home/ubuntu/.env.prod
+
+            echo "Preparing development env file"
             echo 'NODE_ENV=development' >> /home/ubuntu/.env.dev
             echo 'API_PORT=${ApiPortDev}' >> /home/ubuntu/.env.dev
             echo 'MONGO_DB_PORT=${MongoPortDev}' >> /home/ubuntu/.env.dev
-            echo 'AwsAccessKeyId=${AwsAccessKeyId}' >> /home/ubuntu/.env.aws
-            echo 'AwsSecretAccessKey=${AwsSecretAccessKey}' >> /home/ubuntu/.env.aws
-            echo 'AwsDefaultRegion=${AwsDefaultRegion}' >> /home/ubuntu/.env.aws
+            echo 'FIREBASE_PROJECT_ID="${FirebaseProjectId}"' >> /home/ubuntu/.env.dev
+            echo 'FIREBASE_CLIENT_EMAIL="${FirebaseClientEmail}"' >> /home/ubuntu/.env.dev
+            echo 'FIREBASE_ADMIN_PRIVATE_KEY="${FirebaseAdminPrivateKey}"' >> /home/ubuntu/.env.dev
+
+            echo "Preparing aws env file"
+            echo 'AwsAccessKeyId="${AwsAccessKeyId}"' >> /home/ubuntu/.env.aws
+            echo 'AwsSecretAccessKey="${AwsSecretAccessKey}"' >> /home/ubuntu/.env.aws
+            echo 'AwsDefaultRegion="${AwsDefaultRegion}"' >> /home/ubuntu/.env.aws
+
+            echo "Executing setup script"
             wget -O /home/ubuntu/dockerhost-setup.sh https://bucket-usevilla-do-2023-public.s3.eu-south-2.amazonaws.com/dockerhost-setup.sh
             sh /home/ubuntu/dockerhost-setup.sh 2>&1 | tee /home/ubuntu/dockerhost-setup.log
 Outputs:
