@@ -9,7 +9,7 @@ import swaggerUi from 'swagger-ui-express'
 import mongoose, {set, connect} from "mongoose";
 import {apiSettings, mongoConnectionSettings} from "../settings";
 import {Routes} from "./util/routes.interface";
-import servicio from './key/acme-explorer-auth-firebase-adminsdk-w4ev5-c027c9ecad.json'
+import servicio from './key/firebase-credentials.json'
 import logger from './logger/logger';
 
 class App {

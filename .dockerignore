@@ -2,3 +2,4 @@
 node_modules
 npm-debug.log
 data
+./src/app/key/firebase-credentials.json
