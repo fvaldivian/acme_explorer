@@ -1,4 +1,4 @@
 node_modules
 dist
 .idea
-src/app/key/acme-explorer-auth-firebase-adminsdk-w4ev5-c027c9ecad.json
+.env
