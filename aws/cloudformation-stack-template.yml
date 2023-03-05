@@ -1,0 +1,95 @@
+Parameters:
+  ApiPortProd:
+    Type: String
+    Description: Api port for production
+    Default: 8080
+  ApiPortDev:
+    Type: String
+    Description: Api port for development
+    Default: 8081
+  MongoPortProd:
+    Type: String
+    Description: Mongo port for production
+    Default: 27017
+  MongoPortDev:
+    Type: String
+    Description: Mongo port for development
+    Default: 27018
+  AwsAccessKeyId:
+    Type: String
+    Description: aws accesskey id
+    Default: 0
+  AwsSecretAccessKey:
+    Type: String
+    Description: aws secret access key
+    Default: 0
+  AwsDefaultRegion:
+    Type: String
+    Description: default region
+    Default: 0
+Resources: 
+  InstanceSecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupName: AllowEC2Traffic
+      GroupDescription: Enable SSH access and HTTP access on the inbound port
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 80
+          ToPort: 80
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 
+            Ref: ApiPortProd
+          ToPort: 
+            Ref: ApiPortProd
+          CidrIp: 0.0.0.0/0
+        - IpProtocol: tcp
+          FromPort: 
+            Ref: ApiPortDev
+          ToPort: 
+            Ref: ApiPortDev
+          CidrIp: 0.0.0.0/0
+      Tags:
+        - Key: Name
+          Value: InstanceSecurityGroup
+  UbuntuInstance:
+    Type: AWS::EC2::Instance
+    Properties:
+      KeyName: "jestrada-aws-usevilla"
+      ImageId: "ami-0ace28e4cd033b81c"
+      InstanceType: t3.micro
+      SecurityGroupIds:
+        - !GetAtt "InstanceSecurityGroup.GroupId"
+      Tags:
+        - Key: Name
+          Value: stack-usevilla-do-2023-ubuntu-instance
+      UserData:
+        Fn::Base64: 
+          !Sub |
+            #!/bin/bash
+            echo 'NODE_ENV=production' >> /home/ubuntu/.env.prod
+            echo 'API_PORT=${ApiPortProd}' >> /home/ubuntu/.env.prod
+            echo 'MONGO_PORT=${MongoPortProd}' >> /home/ubuntu/.env.prod
+            echo 'NODE_ENV=development' >> /home/ubuntu/.env.dev
+            echo 'API_PORT=${ApiPortDev}' >> /home/ubuntu/.env.dev
+            echo 'MONGO_PORT=${MongoPortDev}' >> /home/ubuntu/.env.dev
+            echo 'AwsAccessKeyId=${AwsAccessKeyId}' >> /home/ubuntu/.env.aws
+            echo 'AwsSecretAccessKey=${AwsSecretAccessKey}' >> /home/ubuntu/.env.aws
+            echo 'AwsDefaultRegion=${AwsDefaultRegion}' >> /home/ubuntu/.env.aws
+            wget -O /home/ubuntu/dockerhost-setup.sh https://bucket-usevilla-do-2023-public.s3.eu-south-2.amazonaws.com/dockerhost-setup.sh
+            sh /home/ubuntu/dockerhost-setup.sh 2>&1 | tee /home/ubuntu/dockerhost-setup.log
+Outputs:
+ outputInstanceSecurityGroup:
+  Description: A reference to the created security group
+  Value: !Ref InstanceSecurityGroup
+ outputUbuntuInstance:
+  Description: A reference to the created EC2 Instance
+  Value: !Ref UbuntuInstance
+ outputUbuntuInstancePublicIp:
+  Description: A reference to the created EC2 Instance
+  Value: !GetAtt "UbuntuInstance.PublicIp"
