@@ -2,4 +2,7 @@
 node_modules
 npm-debug.log
 data
-./src/app/key/firebase-credentials.json
+./aws/credentials
+./aws/.env
+./doker/.env.dev
+./doker/.env.prod

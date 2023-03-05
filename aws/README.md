@@ -20,6 +20,6 @@ aws web console
 C:\Users\JUANE\.aws\credentials
 C:\Users\JUANE\.aws\config
 
-## En el archivo .env hay que configurar las variables AwsAccessKeyId, AwsSecretAccessKey y AwsDefaultRegion
+## En el archivo .env, basándose en .env.example, hay que configurar los puertos de los servicios y las credenciales de aws y firebase
 
 ## Hay que tener un archivo aws-key-pair.pem en la carpeta credentials
