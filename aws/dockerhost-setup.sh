@@ -51,17 +51,20 @@ aws configure set default.region $AwsDefaultRegion
 # 4. Download private files
 aws s3 cp s3://bucket-usevilla-do-2023-private/docker-compose.yml /home/ubuntu/
 aws s3 cp s3://bucket-usevilla-do-2023-private/docker-compose.override.yml /home/ubuntu/
-aws s3 cp s3://bucket-usevilla-do-2023-private/firebase-credentials.json /home/ubuntu/
+aws s3 cp s3://bucket-usevilla-do-2023-private/firebase-credentials.json /home/ubuntu/key/
 
 #-------------------------------------------------------------------------------
 #DEPLOY APP ENVIRONMENTS
 #-------------------------------------------------------------------------------
 
-# 1. Create volume referenced in docker-compose.yml
-sudo docker volume create logging
+# 1. Introduce a delay not to overload the server(only in low resources servers)
+sleep 30
 
 # 2. Deploy production app
 cd /home/ubuntu/ && docker compose -p "app-usevilla-do-2023-prod" -f /home/ubuntu/docker-compose.yml --env-file /home/ubuntu/.env.prod up --build -d
 
-# 2. Deploy developement app
+# 3. Introduce a delay not to overload the server(only in low resources servers)
+sleep 30
+
+# 4. Deploy developement app
 cd /home/ubuntu/ && docker compose -p "app-usevilla-do-2023-dev" --env-file /home/ubuntu/.env.dev up --build -d

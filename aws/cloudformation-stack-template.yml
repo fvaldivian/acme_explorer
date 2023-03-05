@@ -74,10 +74,10 @@ Resources:
             #!/bin/bash
             echo 'NODE_ENV=production' >> /home/ubuntu/.env.prod
             echo 'API_PORT=${ApiPortProd}' >> /home/ubuntu/.env.prod
-            echo 'MONGO_PORT=${MongoPortProd}' >> /home/ubuntu/.env.prod
+            echo 'MONGO_DB_PORT=${MongoPortProd}' >> /home/ubuntu/.env.prod
             echo 'NODE_ENV=development' >> /home/ubuntu/.env.dev
             echo 'API_PORT=${ApiPortDev}' >> /home/ubuntu/.env.dev
-            echo 'MONGO_PORT=${MongoPortDev}' >> /home/ubuntu/.env.dev
+            echo 'MONGO_DB_PORT=${MongoPortDev}' >> /home/ubuntu/.env.dev
             echo 'AwsAccessKeyId=${AwsAccessKeyId}' >> /home/ubuntu/.env.aws
             echo 'AwsSecretAccessKey=${AwsSecretAccessKey}' >> /home/ubuntu/.env.aws
             echo 'AwsDefaultRegion=${AwsDefaultRegion}' >> /home/ubuntu/.env.aws
