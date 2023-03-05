@@ -108,6 +108,9 @@ Resources:
 
             echo "Executing setup script"
             wget -O /home/ubuntu/dockerhost-setup.sh https://bucket-usevilla-do-2023-public.s3.eu-south-2.amazonaws.com/dockerhost-setup.sh
+            apt-get update
+            apt install dos2unix
+            dos2unix /home/ubuntu/dockerhost-setup.sh
             sh /home/ubuntu/dockerhost-setup.sh 2>&1 | tee /home/ubuntu/dockerhost-setup.log
 Outputs:
  outputInstanceSecurityGroup:
