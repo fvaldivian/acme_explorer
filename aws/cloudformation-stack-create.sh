@@ -6,17 +6,11 @@ source ./.env
 # upload script to s3, this one must be public
 aws s3 cp ${PWD}/dockerhost-setup.sh s3://bucket-usevilla-do-2023-public/ --acl public-read >> logs/s3.log
 
-# upload template to s3
+# upload template to s3, this also must be public
 aws s3 cp ${PWD}/cloudformation-stack-template.yml s3://bucket-usevilla-do-2023-public/ --acl public-read >> logs/s3.log
 
 # upload docker-compose.yml to s3
 aws s3 cp ${PWD}/docker-compose.yml s3://bucket-usevilla-do-2023-private/ >> logs/s3.log
-
-# upload docker-compose.override.yml to s3
-aws s3 cp ${PWD}/docker-compose.override.yml s3://bucket-usevilla-do-2023-private/ >> logs/s3.log
-
-# upload firebase-credentials.json to s3
-aws s3 cp ${PWD}/credentials/firebase-credentials.json s3://bucket-usevilla-do-2023-private/ >> logs/s3.log
 
 # create stack
 aws cloudformation create-stack --stack-name stack-usevilla-do-2023 \
@@ -27,8 +21,11 @@ ParameterKey=ApiPortDev,ParameterValue=$ApiPortDev \
 ParameterKey=MongoPortProd,ParameterValue=$MongoPortProd \
 ParameterKey=MongoPortDev,ParameterValue=$MongoPortDev \
 ParameterKey=AwsAccessKeyId,ParameterValue=$AwsAccessKeyId \
-ParameterKey=AwsSecretAccessKey,ParameterValue=$AwsSecretAccessKey \
-ParameterKey=AwsDefaultRegion,ParameterValue=$AwsDefaultRegion >> logs/aws-cli.log
+ParameterKey=AwsSecretAccessKey,ParameterValue="${AwsSecretAccessKey}" \
+ParameterKey=AwsDefaultRegion,ParameterValue=$AwsDefaultRegion \
+ParameterKey=FirebaseProjectId,ParameterValue=$FIREBASE_PROJECT_ID \
+ParameterKey=FirebaseClientEmail,ParameterValue="${FIREBASE_CLIENT_EMAIL}" \
+ParameterKey=FirebaseAdminPrivateKey,ParameterValue="${FIREBASE_ADMIN_PRIVATE_KEY}" >> logs/aws-cli.log
 
 #Waiting for dockerhost ip
 DockerHostIp=""
