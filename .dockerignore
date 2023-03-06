@@ -4,5 +4,5 @@ npm-debug.log
 data
 ./aws/credentials
 ./aws/.env
-./doker/.env.dev
-./doker/.env.prod
+./docker/.env.dev
+./docker/.env.prod

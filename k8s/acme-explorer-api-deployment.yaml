@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: acme-explorer-api
+  name: acme-explorer-api-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: acme-explorer-api-pod
+  template:
+    metadata:
+      labels:
+        app: acme-explorer-api-pod
+    spec:
+      containers:
+      - name: acme-explorer-api-container
+        env:
+        - name: MONGO_URL
+          value: mongodb://mongodb-service:27017
+        resources: {}
+        image: fvaldivian/acme-explorer-pf:latest
+        ports:
+        - containerPort: 8080
+      restartPolicy: Always

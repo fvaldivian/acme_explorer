@@ -3,7 +3,7 @@ import finderModel from "../models/finder.model";
 
 class FinderController {
 
-    public searchFidner = async (_req: Request, res: Response) => {
+    public searchFinder = async (_req: Request, res: Response) => {
         try {
             const finders = await finderModel.find();
             return res.send(finders);
@@ -12,7 +12,7 @@ class FinderController {
         }
     };
 
-    public createFidner = async (req: Request, res: Response) => {
+    public createFinder = async (req: Request, res: Response) => {
         if (!req.body) {
             return res
                 .status(400)
@@ -49,7 +49,7 @@ class FinderController {
         try {
             const result = await finderModel.findByIdAndDelete(id);
             if (result === null) {
-                res.status(404).json({msg: "Fidner not found"});
+                res.status(404).json({msg: "Finder not found"});
             }
             res.status(200).json(result);
         } catch (err) {
