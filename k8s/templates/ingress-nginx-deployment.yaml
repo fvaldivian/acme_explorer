@@ -1,8 +1,10 @@
+#@ load("@ytt:data", "data")
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: ingress-nginx-deployment
-  namespace: default
+  namespace: #@ data.values.NAMESPACE
 spec:
   replicas: 1
   selector:
@@ -18,7 +20,7 @@ spec:
           image: us.gcr.io/k8s-artifacts-prod/ingress-nginx/controller:v1.1.1
           args:
             - /nginx-ingress-controller
-            - --default-backend-service=default/acme-explorer-api-service
+            - #@ data.values.DEFAULT_BACKEND_SERVICE
             - --annotations-prefix=nginx.ingress.kubernetes.io
           env:
             - name: POD_NAME

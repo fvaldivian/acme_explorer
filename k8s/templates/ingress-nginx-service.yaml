@@ -1,3 +1,5 @@
+#@ load("@ytt:data", "data")
+---
 apiVersion: v1
 kind: Service
 metadata:
@@ -6,7 +8,7 @@ spec:
   type: LoadBalancer
   ports:
   - name: http
-    port: 80
+    port: #@ data.values.INGRESS_HTTP_PORT
     targetPort: 80
     protocol: TCP
   - name: https

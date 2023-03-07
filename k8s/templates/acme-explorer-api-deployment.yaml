@@ -1,3 +1,5 @@
+#@ load("@ytt:data", "data")
+---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -18,11 +20,11 @@ spec:
       - name: acme-explorer-api-container
         env:
         - name: NODE_ENV
-          value: "development"
+          value: #@ data.values.NODE_ENV
         - name: MONGO_DB_HOST
           value: "mongodb-service"
         - name: MONGO_DB_PORT
-          value: "27017"
+          value: #@ data.values.MONGO_DB_PORT
         - name: MONGO_DB_USER
           value: "user"
         - name: MONGO_DB_PASSWORD
@@ -30,15 +32,15 @@ spec:
         - name: MONGO_DB_NAME
           value: "acme_explorer"
         - name: API_PORT
-          value: "8080"
+          value: #@ data.values.API_PORT
         - name: "FIREBASE_PROJECT_ID"
-          value: "acme-explorer-auth"
+          value: #@ data.values.FIREBASE_PROJECT_ID
         - name: FIREBASE_CLIENT_EMAIL
-          value: "***"
+          value: #@ data.values.FIREBASE_CLIENT_EMAIL
         - name: FIREBASE_ADMIN_PRIVATE_KEY
-          value: "***"
+          value: #@ data.values.FIREBASE_ADMIN_PRIVATE_KEY
         resources: {}
         image: fvaldivian/acme-explorer-pf:latest
         ports:
-        - containerPort: 8080
+        - containerPort: #@ data.values.API_PORT_NUMBER
       restartPolicy: Always
