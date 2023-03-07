@@ -5,7 +5,7 @@ metadata:
     app: mongodb
   name: mongodb-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: mongodb-pod
@@ -20,6 +20,13 @@ spec:
           - mountPath: /var/lib/mongo
             name: mongodb
         image: mongo:4.2
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: "user"
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: "S3cret"
+        - name: MONGO_INITDB_DATABASE
+          value: "acme_explorer"
         ports:
         - containerPort: 27017
       volumes:

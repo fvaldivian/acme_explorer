@@ -5,7 +5,7 @@ metadata:
     app: acme-explorer-api
   name: acme-explorer-api-deployment
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: acme-explorer-api-pod
@@ -17,8 +17,26 @@ spec:
       containers:
       - name: acme-explorer-api-container
         env:
-        - name: MONGO_URL
-          value: mongodb://mongodb-service:27017
+        - name: NODE_ENV
+          value: "development"
+        - name: MONGO_DB_HOST
+          value: "mongodb-service"
+        - name: MONGO_DB_PORT
+          value: "27017"
+        - name: MONGO_DB_USER
+          value: "user"
+        - name: MONGO_DB_PASSWORD
+          value: "S3cret"
+        - name: MONGO_DB_NAME
+          value: "acme_explorer"
+        - name: API_PORT
+          value: "8080"
+        - name: "FIREBASE_PROJECT_ID"
+          value: "acme-explorer-auth"
+        - name: FIREBASE_CLIENT_EMAIL
+          value: "***"
+        - name: FIREBASE_ADMIN_PRIVATE_KEY
+          value: "***"
         resources: {}
         image: fvaldivian/acme-explorer-pf:latest
         ports:
