@@ -10,11 +10,11 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mongodb-pod
+      app: #@ data.values.MONGO_APP_NAME
   template:
     metadata:
       labels:
-        app: mongodb-pod
+        app: #@ data.values.MONGO_APP_NAME
     spec:
       containers:
       - name: mongodb-container
@@ -34,5 +34,5 @@ spec:
       volumes:
       - name: mongodb
         persistentVolumeClaim:
-          claimName: mongodb-pvc
+          claimName: #@ data.values.MONGO_PVC_NAME
       restartPolicy: Always

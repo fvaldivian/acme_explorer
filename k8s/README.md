@@ -10,10 +10,6 @@ En una terminal de git comparar el hash del archivo descargado con el que se ind
 
 shasum -a 256 ~/Downloads/ytt-darwin-amd64.exe
 
-# Instalar
-
-Instalar el .exe
-
 # Crear variable de entorno
 
 Después hay que poner ese archivo .exe en alguna ruta, por ejemplo C:\ytt\ytt.exe 
@@ -32,9 +28,9 @@ Hay que crear una copia del archivo values-schema.yml y llamarla values-prod.yml
 
 También hay que crear una copia del archivo values-schema.yml y llamarla values-dev.yml
 
-Asignarle a cada una los valores a las variables, obiamente los puertos no pueden ser los mismos
+Asignarle a cada una los valores a las variables cambiando los puertos o colocándole los sufijos -prod o -dev según sea el caso.
 
-# Variables relacionadas al namespace
+# Configurando variables relacionadas a loss namespaces
 
 Es importante mencionar la manera de editar estas variables
 
@@ -49,6 +45,8 @@ Para producción sería
 NAMESPACE: "production"
 
 DEFAULT_BACKEND_SERVICE: "--default-backend-service=production/acme-explorer-api-service"
+
+Es importante destacar que estos namespaces "development" y "production" son también referenciados en los archivos apply.sh y delete.sh 
 
 # Desplegando
 

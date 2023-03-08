@@ -1,7 +1,9 @@
+#@ load("@ytt:data", "data")
+---
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: mongodb-pv
+  name: #@ data.values.MONGO_PV_NAME
   labels:
     type: local
 spec:

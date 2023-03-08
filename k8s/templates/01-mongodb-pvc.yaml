@@ -1,7 +1,9 @@
+#@ load("@ytt:data", "data")
+---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mongodb-pvc
+  name: #@ data.values.MONGO_PVC_NAME
 spec:
   storageClassName: generic
   accessModes:

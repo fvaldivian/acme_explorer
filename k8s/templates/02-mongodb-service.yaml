@@ -11,5 +11,5 @@ spec:
   - port: #@ data.values.MONGO_DB_PORT_NUMBER
     targetPort: 27017
   selector:
-    app: mongodb-pod
+    app: #@ data.values.MONGO_APP_NAME
   type: ClusterIP
