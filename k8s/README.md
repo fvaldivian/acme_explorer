@@ -1,62 +1,70 @@
-# Descargar la templating tool ytt
+## Descargar la templating tool ytt
 
-Descargar la versión más reciente yendo a la url indicada abajo, desplegar assets y descargar ytt-windows-amd64.exe
+Descargar la versión más reciente yendo a la url indicada abajo, desplegar assets y descargar <code>ytt-windows-amd64.exe</code>.
 
-https://github.com/carvel-dev/ytt/releases
+<https://github.com/carvel-dev/ytt/releases>
 
-# Comprobar integridad de la descarga
+## Comprobar integridad de la descarga
 
 En una terminal de git comparar el hash del archivo descargado con el que se indica en la página de las descargas para asegurarse que se descargó correctamente
 
+```
 shasum -a 256 ~/Downloads/ytt-darwin-amd64.exe
+```
 
-# Crear variable de entorno
+## Crear variable de entorno
 
-Después hay que poner ese archivo .exe en alguna ruta, por ejemplo C:\ytt\ytt.exe 
+Colocar archivo <code>ytt.exe</code> en alguna ruta, por ejemplo <code>C:\ytt\ytt.exe</code>.
 
-Luego modificar las variables de entorno para incluir esa carpeta C:\ytt
+Luego modificar el path en las variables de entorno para incluir esa carpeta <code>C:\ytt</code>
 
-# Comprobando la disponibilidad 
+## Comprobar la disponibilidad 
 
-Abrir una nueva terminal y verificar que está instalado con
+Abrir una nueva terminal y verificar que está instalado.
 
+```
 ytt version
+```
 
-# Preparando archivos de producción y desarrollo
+## Configurar los entornos
 
-Hay que crear una copia del archivo values-schema.yml y llamarla values-prod.yml
+Crear los archivos de variables de entorno para producción y para desarrollo basados en <code>values-schema.yml</code>.
 
-También hay que crear una copia del archivo values-schema.yml y llamarla values-dev.yml
+```
+cp values-schema.yml values-dev.yml
+cp values-schema.yml values-prod.yml
+```
 
-Asignarle a cada una los valores a las variables cambiando los puertos o colocándole los sufijos -prod o -dev según sea el caso.
+Asignarle a cada una los valores de las variables, cambiando los puertos, entorno y colocándole los sufijos -prod o -dev según sea el caso.
 
-# Configurando variables relacionadas a loss namespaces
+## Configurar variables relacionadas a los namespaces
 
-Es importante mencionar la manera de editar estas variables
+Es importante mencionar la manera de editar estas variables.
 
-Para desarrollo sería
+Para desarrollo sería:
 
+```
 NAMESPACE: "development"
-
 DEFAULT_BACKEND_SERVICE: "--default-backend-service=development/acme-explorer-api-service"
+```
 
-Para producción sería
+Para producción sería:
 
+```
 NAMESPACE: "production"
-
 DEFAULT_BACKEND_SERVICE: "--default-backend-service=production/acme-explorer-api-service"
+```
 
-Es importante destacar que estos namespaces "development" y "production" son también referenciados en los archivos apply.sh y delete.sh 
+Es importante destacar que estos namespaces "development" y "production" son también referenciados en los archivos <code>apply.sh</code> y <code>delete.sh</code> 
 
-# Desplegando
+## Desplegar
 
-Ejecutar el archivo
-
+```
 sh apply.sh
+```
 
-# Eliminando
+## Eliminar
 
-Ejecutar el archivo
-
+```
 sh delete.sh
-
+```

@@ -1,12 +1,30 @@
-## Ejecutar el comando apply.sh para crear todo lo necesario
+## Instalar
 
-## Iniciar el servidor web con start.sh
+```
+sh apply.sh
+```
 
-## Eso debería abrir la url del dashboard en el navegador, si no se abre, la url es
+## Generar token de autenticación
 
-http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/
+Este token hay que copiarlo para el siguiente paso.
 
-## En otra terminal, sin detener el servidor, ejecutar get-token.sh generar un token que será necesario para entrar en el dashboard
+```
+sh get-token.sh
+```
 
-## Si fuese necesario, ejecutar el comando delete.sh para eliminar todo
+## Iniciar el servidor web 
+
+```
+sh start.sh
+```
+Eso debería abrir la url del dashboard en el navegador, si no se abre, la url es
+
+<http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/>
+
+## Eliminar
+
+```
+sh delete.sh
+```
+
 
