@@ -48,4 +48,4 @@ do
 done
 
 clear
-echo "Applications should soon be available at http://$DockerHostIp:$ApiPortProd/v1/actors and http://$DockerHostIp:$ApiPortDev/v1/actors"
+echo "Applications should soon be available at http://$DockerHostIp:$ApiPortProd/api-docs/ and http://$DockerHostIp:$ApiPortDev/api-docs/"
