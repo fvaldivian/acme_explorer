@@ -40,6 +40,7 @@ Asignarle a cada una los valores de las variables, cambiando los puertos, entorn
 ## Configurar variables relacionadas a los namespaces
 
 Es importante mencionar la manera de editar estas variables.
+Destacar que los ficheros yml (values-dev.yml, values-dev.yml) contendran en su encabezado #@data/values-schema, esto debe ser modificado a #@data/values para su correcto funcionamiento.
 
 Para desarrollo sería:
 
