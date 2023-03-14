@@ -1,3 +1,11 @@
+## Fuente
+
+<https://github.com/kubernetes/dashboard>
+
+y 
+
+<https://github.com/kubernetes/dashboard/blob/master/docs/user/access-control/creating-sample-user.md>
+
 ## Instalar
 
 ```
