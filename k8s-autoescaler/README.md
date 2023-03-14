@@ -1,25 +1,25 @@
 ## Iniciar el k8s-dashboard
 
-Hay que leer las instrucciones en el readme de la carpeta <code>./k8s-dashboard</code> para poder iniciarlo.
+Leer las instrucciones en <code>./k8s-dashboard/README.md</code> para poder iniciarlo.
 
-## Desplegar los entornos de k8s
+## Desplegar los entornos de production y development de k8s
 
-Hay que leer las instrucciones en el readme de la carpeta <code>./k8s</code> para poder desplegarlos.
+Leer las instrucciones en <code>./k8s/README.md</code> para poder desplegarlos.
 
-## Solicitar de recursos
+## Configurar recursos
 
-Es importante que la sección de recursos del deplyment solicite los recursos de cpu a utilizar.
+Es importante que la sección de recursos del deployment indique los recursos de cpu a utilizar.
 
 Se puede apreciar esto en <code>./k8s/templates/03-acme-explorer-api-deployment.yaml</code>
 
-En lugar de esto:
+En lugar de:
 
 ```
 resources: {}
 
 ```
 
-Debe mostrar algo parecido a esto:
+Se tiene:
 ```
 resources: 
     requests:
