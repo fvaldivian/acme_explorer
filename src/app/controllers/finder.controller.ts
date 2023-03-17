@@ -1,7 +1,10 @@
 import { Request, Response } from "express";
 import finderModel from "../models/finder.model";
 import { TripModel } from "../models/trip.model";
-
+/***
+ *  Hacer un nuevo modelo para guardar los datos
+ *  Guardar cada cierto tiempo los datos segun la configuracion
+ */
 class FinderController {
   public searchFidner = async (_req: Request, res: Response) => {
     try {
@@ -62,7 +65,6 @@ class FinderController {
     const from_date_typed = new Date(from_date);
     const to_date_typed = new Date(to_date);
 
-    console.log(to_date_typed)
     try {
       const result = await TripModel.aggregate([
         {

@@ -2,6 +2,13 @@ import { Request, Response } from "express";
 import { ApplicationModel } from "../models/application.model";
 import { TripModel } from "../models/trip.model";
 
+/***
+ *  TO-DO:
+ *  Hacer validaciones àra el dashboard
+ *  Hacer modelo para dashboard y guardar los datos cada cierto tiempo (estuidar libreria para ello-revisar las 
+ *  Clases)
+ */
+
 class DashboardController {
   public ratioApplications = async (_req: Request, res: Response) => {
     try {
