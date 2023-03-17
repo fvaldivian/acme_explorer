@@ -7,8 +7,9 @@ import admin from 'firebase-admin';
 import FinderRoutes from "./app/routes/finder.routes";
 import LoginRoutes from "./app/routes/login.routes";
 import servicio from './app/key/acme-explorer-auth-firebase-adminsdk-w4ev5-c027c9ecad.json'
+import DashboardRoutes from "./app/routes/dashboard.routes";
 
-const app = new App([new ActorRoutes(), new TripRoutes(), new ApplicationRoutes(), new ConfigRoutes(), new FinderRoutes(), new LoginRoutes()]);
+const app = new App([new ActorRoutes(), new TripRoutes(), new ApplicationRoutes(), new ConfigRoutes(), new FinderRoutes(), new LoginRoutes(), new DashboardRoutes()]);
 
 const serviceAccount = servicio;
         admin.initializeApp({

@@ -13,6 +13,7 @@ class FinderRoutes implements Routes {
         this.initializeRoutes();
     }
     private initializeRoutes() {
+        this.router.get(`${this.path}/search-trip`, this.controller.findTrip)
         this.router.post(
             this.path,
             createValidator,
@@ -26,6 +27,7 @@ class FinderRoutes implements Routes {
             this.controller.updateFinder
         );
         this.router.delete(`${this.path}/:id`, handleValidation, this.controller.deleteFinder);
+        
     }
 }
 
