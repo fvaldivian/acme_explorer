@@ -41,5 +41,19 @@ const applicationSchema = new Schema({
     }
 })
 
+applicationSchema.pre('save', async function (next) {
+    const actor = await ActorModel.findOne({_id: this.explorer}).exec();
+    if (!(actor?.role.indexOf("EXPLORER") > -1)) {
+        next(new Error('ExplorerRoleError'));
+    }
+
+    const trip = await TripModel.findOne({_id: this.trip}).exec();
+    const now = new Date();
+    if (!trip?.published || trip?.start_date < now || trip?.cancelled) {
+        next(new Error('ApplicationError'));
+    }
+    next();
+})
+
 
 export const ApplicationModel = model<Application>('Application', applicationSchema)

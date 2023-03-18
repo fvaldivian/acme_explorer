@@ -1,0 +1,50 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: acme-explorer-api
+  name: acme-explorer-api-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: acme-explorer-api-pod
+  template:
+    metadata:
+      labels:
+        app: acme-explorer-api-pod
+    spec:
+      containers:
+      - name: acme-explorer-api-container
+        env:
+        - name: NODE_ENV
+          value: #@ data.values.NODE_ENV
+        - name: MONGO_DB_HOST
+          value: "mongodb-service"
+        - name: MONGO_DB_PORT
+          value: #@ data.values.MONGO_DB_PORT
+        - name: MONGO_DB_USER
+          value: "user"
+        - name: MONGO_DB_PASSWORD
+          value: "S3cret"
+        - name: MONGO_DB_NAME
+          value: "acme_explorer"
+        - name: API_PORT
+          value: #@ data.values.API_PORT
+        - name: "FIREBASE_PROJECT_ID"
+          value: #@ data.values.FIREBASE_PROJECT_ID
+        - name: FIREBASE_CLIENT_EMAIL
+          value: #@ data.values.FIREBASE_CLIENT_EMAIL
+        - name: FIREBASE_ADMIN_PRIVATE_KEY
+          value: #@ data.values.FIREBASE_ADMIN_PRIVATE_KEY
+        resources: 
+          requests:
+            cpu: 50m
+          limits:
+            cpu: 300m   
+        image: fvaldivian/acme-explorer-pf:latest
+        ports:
+        - containerPort: #@ data.values.API_PORT_NUMBER
+      restartPolicy: Always

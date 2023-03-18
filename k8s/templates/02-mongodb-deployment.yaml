@@ -1,0 +1,38 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: mongodb
+  name: mongodb-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: #@ data.values.MONGO_APP_NAME
+  template:
+    metadata:
+      labels:
+        app: #@ data.values.MONGO_APP_NAME
+    spec:
+      containers:
+      - name: mongodb-container
+        volumeMounts:
+          - mountPath: /var/lib/mongo
+            name: mongodb
+        image: mongo:4.2
+        env:
+        - name: MONGO_INITDB_ROOT_USERNAME
+          value: "user"
+        - name: MONGO_INITDB_ROOT_PASSWORD
+          value: "S3cret"
+        - name: MONGO_INITDB_DATABASE
+          value: "acme_explorer"
+        ports:
+        - containerPort: #@ data.values.MONGO_DB_PORT_NUMBER
+      volumes:
+      - name: mongodb
+        persistentVolumeClaim:
+          claimName: #@ data.values.MONGO_PVC_NAME
+      restartPolicy: Always

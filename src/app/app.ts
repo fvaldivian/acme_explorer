@@ -9,7 +9,7 @@ import swaggerUi from 'swagger-ui-express'
 import mongoose, {set, connect} from "mongoose";
 import {apiSettings, mongoConnectionSettings} from "../settings";
 import {Routes} from "./util/routes.interface";
-import servicio from './key/acme-explorer-auth-firebase-adminsdk-w4ev5-c027c9ecad.json'
+import logger from './logger/logger';
 
 class App {
     app: Application
@@ -65,13 +65,13 @@ class App {
         const options = {
             failOnErrors: true,
             definition: {
-                openapi: '3.0.0',
+                openapi: '3.0.3',
                 info: {
                     title: 'REST API Docs',
                     version: '1.0.0',
                 },
             },
-            apis: [path.join(__dirname, 'swagger.yaml')],
+            apis: ['src/**/*.yaml'],
         }
 
         const specs = swaggerJSDoc(options)
@@ -79,20 +79,19 @@ class App {
     }
 
     connectToDatabase(): void {
-        console.log(process.env.MONGO_DB_HOST)
         if (this.env === 'development')
             set('debug', true)
         connect(mongoConnectionSettings.url, (error) => {
             if (error)
-                console.log('Error connecting to database: ', error)
+                logger.error('Error connecting to database: ', error)
             else
-                console.log('Connected to database')
+                logger.info('Connected to database')
         })
     }
 
 
     connectToFirebase(): void {
-    //firebase config - start   
+    //firebase config - start
         this.app.use(function (_req, res, next) {
             res.header('Access-Control-Allow-Origin', '*')
             res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, idToken') // watch out, if a custom parameter, like idToken, is added in the header, it must to be declared here to avoid CORS error

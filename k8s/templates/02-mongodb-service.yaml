@@ -1,0 +1,15 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mongodb
+  name: mongodb-service
+spec:
+  ports:
+  - port: #@ data.values.MONGO_DB_PORT_NUMBER
+    targetPort: 27017
+  selector:
+    app: #@ data.values.MONGO_APP_NAME
+  type: ClusterIP

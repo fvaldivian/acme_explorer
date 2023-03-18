@@ -1,0 +1,17 @@
+#@ load("@ytt:data", "data")
+---
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: acme-explorer-api
+  name: acme-explorer-api-service
+spec:
+  ports:
+  - name: http
+    port: #@ data.values.API_PORT_NUMBER
+    nodePort: #@ data.values.API_NODE_PORT_NUMBER
+    targetPort: #@ data.values.API_PORT_NUMBER
+  selector:
+    app: acme-explorer-api-pod
+  type: NodePort

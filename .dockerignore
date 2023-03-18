@@ -1,0 +1,8 @@
+.*
+node_modules
+npm-debug.log
+data
+./aws/credentials
+./aws/.env
+./docker/.env.dev
+./docker/.env.prod

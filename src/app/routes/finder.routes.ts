@@ -18,9 +18,9 @@ class FinderRoutes implements Routes {
             this.path,
             createValidator,
             handleValidation,
-            this.controller.createFidner
+            this.controller.createFinder
         );
-        this.router.get(this.path, this.controller.searchFidner);
+        this.router.get(this.path, this.controller.searchFinder);
         this.router.put(
             `${this.path}/:id`,
             handleValidation,
