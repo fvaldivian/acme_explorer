@@ -6,7 +6,7 @@ import { TripModel } from "../models/trip.model";
  *  Guardar cada cierto tiempo los datos segun la configuracion
  */
 class FinderController {
-  public searchFidner = async (_req: Request, res: Response) => {
+  public searchFinder = async (_req: Request, res: Response) => {
     try {
       const finders = await finderModel.find();
       return res.send(finders);
@@ -15,7 +15,7 @@ class FinderController {
     }
   };
 
-  public createFidner = async (req: Request, res: Response) => {
+  public createFinder = async (req: Request, res: Response) => {
     if (!req.body) {
       return res
         .status(400)
