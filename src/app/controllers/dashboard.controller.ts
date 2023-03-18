@@ -20,8 +20,8 @@ class DashboardController {
           },
         },
       ]);
-
       res.status(200).send(result);
+
     } catch (error) {
       res.status(500).send(error);
     }
@@ -94,6 +94,11 @@ class DashboardController {
       res.status(500).send(error);
     }
   };
+
+  public genereteDashboardInfo = async (req: Request, res: Response) =>{
+    
+  }
+
 }
 
 export default DashboardController;
