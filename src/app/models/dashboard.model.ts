@@ -1,23 +1,12 @@
 import { Schema, model } from 'mongoose';
-import { RatioApplication, Dashboard } from '../types/dashboard';
+import { Dashboard } from '../types/dashboard';
+import { ApplicationRatioModel } from './ratioApplication.model';
+import { InformationDashboardModel } from './informationDashboard.model';
 
 const DashboardSchema = new Schema({
-    ratio_application:{
-        type: Object,
-        require: 'Kindly enter the ratio application'
-    },
-    price_per_trip:{
-        type: Object,
-        require: 'Kindly enter the price per trip '
-    },
-    application_per_trip:{
-        type: Object,
-        require: 'Kindly enter the ratio application per trip'
-    },
-    trip_per_manager: {
-        type: Object,
-        require: 'Kindly enter the ratio trip per manager'
-    }
+    price_per_trip: {InformationDashboardModel},
+    application_per_trip: {InformationDashboardModel},
+    trip_per_manager: {InformationDashboardModel}
 })
 
-export const DashboardModel = model<Dashboard>('Dashbord', DashboardSchema)
+export const DashboardModel = model('Dashbord', DashboardSchema)

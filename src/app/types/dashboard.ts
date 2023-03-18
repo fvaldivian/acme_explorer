@@ -1,12 +1,13 @@
 export interface RatioApplication{
-    _id: any
-    total: number
+    status: string
+    count: number
+    ratio: number
 }
 
-export interface PricePerTrip{
+export interface InformationDashboard{
     average: number
-    min_price: number
-    max_price: number
+    min: number
+    max: number
     standard_desviation: number
 }
 
@@ -26,8 +27,8 @@ export interface TripPerManager{
 
 
 export interface Dashboard{
-    ratio_application: RatioApplication
-    price_per_trip: PricePerTrip
-    application_per_trip: ApplicationPerTrip
-    trip_per_manager: TripPerManager
+    ratio_application: [RatioApplication]
+    price_per_trip: InformationDashboard
+    application_per_trip: InformationDashboard
+    trip_per_manager: InformationDashboard
 }
