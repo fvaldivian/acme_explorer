@@ -3,6 +3,7 @@ import handleValidation from "../middlewares/ValidationMiddleware";
 import {createValidator} from "../validators/ActorValidator";
 import {Routes} from "../util/routes.interface";
 import ActorController from "../controllers/actor.controller";
+//import {verifyUser} from '../controllers/auth.controllrt'
 
 class ActorRoutes implements Routes {
     public path = "/v1/actors";

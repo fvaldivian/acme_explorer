@@ -6,8 +6,9 @@ import ConfigRoutes from './app/routes/config.routes';
 import admin from 'firebase-admin';
 import FinderRoutes from "./app/routes/finder.routes";
 import LoginRoutes from "./app/routes/login.routes";
+import DashboardRoutes from "./app/routes/dashboard.routes";
 
-const app = new App([new ActorRoutes(), new TripRoutes(), new ApplicationRoutes(), new ConfigRoutes(), new FinderRoutes(), new LoginRoutes()]);
+const app = new App([new ActorRoutes(), new TripRoutes(), new ApplicationRoutes(), new ConfigRoutes(), new FinderRoutes(), new LoginRoutes(), new DashboardRoutes()]);
 
 admin.initializeApp({
     credential: admin.credential.cert({

@@ -21,14 +21,14 @@ class TripRoutes implements Routes {
             this.controller.create
         );
         this.router.get(this.path, this.controller.getAll);
-        this.router.get(`${this.path}:id`, this.controller.get);
+        this.router.get(`${this.path}/:id`, this.controller.get);
         this.router.put(
-            `${this.path}:id`,
+            `${this.path}/:id`,
             createValidator,
             handleValidation,
             this.controller.update
         );
-        this.router.delete(`${this.path}:id`, this.controller.delete);
+        this.router.delete(`${this.path}/:id`, this.controller.delete);
         this.router.get(`${this.path}/search`, this.controller.search);
     }
 }

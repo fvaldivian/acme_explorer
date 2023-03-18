@@ -16,11 +16,11 @@ class ApplicationRoutes implements Routes {
     private initializeRoutes() {
         this.router.post(this.path, createValidator, handleValidation, this.controller.addApplication);
         this.router.get(this.path, this.controller.getAllApplications);
-        this.router.get(`${this.path}:id`, this.controller.getApplicationById);
-        this.router.put(`${this.path}:id`, createValidator, handleValidation, this.controller.updateApplication);
-        this.router.delete(`${this.path}:id`, this.controller.deleteApplication);
-        this.router.patch(`${this.path}:id/denied`, this.controller.deniedApplication)
-        this.router.patch(`${this.path}:id/approved`, this.controller.approvedApplication)
+        this.router.get(`${this.path}/:id`, this.controller.getApplicationById);
+        this.router.put(`${this.path}/:id`, createValidator, handleValidation, this.controller.updateApplication);
+        this.router.delete(`${this.path}/:id`, this.controller.deleteApplication);
+        this.router.patch(`${this.path}/:id/denied`, this.controller.deniedApplication)
+        this.router.patch(`${this.path}/:id/approved`, this.controller.approvedApplication)
     }
 }
 
