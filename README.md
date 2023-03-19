@@ -2,7 +2,7 @@
 
 ## 1 - Set up .env files regarding .env.example file.
 
-    ACME-Explorer
+    cp .env.example .env.dev
 
 ## 2 - Start application with Docker.
 
