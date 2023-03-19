@@ -1,0 +1,10 @@
+{
+  "name": "Brian D",
+  "surname": "Enriquez C",
+  "email": "#{email}",
+  "password": "1234567890",
+  "phone_number": 123456789,
+  "address": "Calle falsa 123",
+  "role": ["EXPLORER"],
+  "isActive": true
+}
