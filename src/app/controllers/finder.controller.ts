@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import finderModel from "../models/finder.model";
 import { TripModel } from "../models/trip.model";
+import { getUserId } from "./auth.controller";
+import { ObjectId } from "mongodb";
 /***
  *  Hacer un nuevo modelo para guardar los datos
  *  Guardar cada cierto tiempo los datos segun la configuracion
@@ -64,9 +66,11 @@ class FinderController {
     const { keyword, low_price, high_price, from_date, to_date } = req.body;
     const from_date_typed = new Date(from_date);
     const to_date_typed = new Date(to_date);
-
+    //const idToken = req.header('idToken')
+    //let authExplorerId = await getUserId(idToken)
+    //let actor = String(authExplorerId) // revisar cuando funcione
     try {
-      const result = await TripModel.aggregate([
+      const ids = await TripModel.aggregate([
         {
           $match: {
             $and: [
@@ -83,8 +87,39 @@ class FinderController {
             ],
           },
         },
+        { $project: { _id: 1 } },
       ]);
-      res.status(200).send(result);
+
+      const trips = [];
+      for (let i = 0; i < ids.length; i++) {
+        trips.push(ids[i]._id.toString());
+      }
+      const finder = new finderModel({
+        keyword,
+        low_price,
+        high_price,
+        from_date,
+        to_date,
+        trips,
+      });
+      const newFinder = await finder.save();
+      res.status(200).send(newFinder);
+    } catch (error) {
+      res.status(500).send(error);
+    }
+  };
+
+  public getTripsFinded = async (req: Request, res: Response) => {
+    const idFinder = req.query.idFinder;
+    try {
+      let idsTrip = await finderModel.aggregate([
+        { $match: { _id: new ObjectId(`${idFinder}`) } },
+        { $project: { _id: 0, trips: 1 } },
+      ]);
+      idsTrip = idsTrip[0].trips;
+      const trips = await TripModel.find({ _id: { $in: idsTrip } });
+      console.log(trips);
+      res.status(200).send(trips);
     } catch (error) {
       res.status(500).send(error);
     }

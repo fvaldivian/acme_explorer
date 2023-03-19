@@ -1,91 +1,96 @@
-import { ApplicationModel } from '../models/application.model';
-import { TripModel } from '../models/trip.model';
+import { ApplicationModel } from "../models/application.model";
+import { TripModel } from "../models/trip.model";
 class DashboardService {
+  public ratioApplications = async () => {
+    const result = await ApplicationModel.aggregate([
+      { $group: { _id: "$status", count: { $sum: 1 } } },
+        {
+          $group: {
+            _id: null,
+            total: { $sum: "$count" },
+            statuses: { $push: { status: "$_id", count: "$count" } },
+          },
+        },
+        { $unwind: "$statuses" },
+        {
+          $addFields: {
+            "statuses.ratio": { $divide: ["$statuses.count", "$total"] },
+          },
+        },
+        {
+          $project: {
+            _id: 0,
+            status: "$statuses.status",
+            count: "$statuses.count",
+            ratio: "$statuses.ratio",
+          },
+        },
+    ]);
+    return result;
+  };
 
-    public ratioApplications = async ( ) => {
-        try {
-          const result = await ApplicationModel.aggregate([
-            {
-              $group: {
-                _id: "$status",
-                total: { $sum: 1 },
-              },
-            },
-          ]);
-          return result
-    
-        } catch (error) {
-          throw error
+  public infoTripPrice = async () => {
+    const result = await TripModel.aggregate([
+      { $match: {} },
+      {
+        $group: {
+          _id: null,
+          average: { $avg: "$price" },
+          min: { $min: "$price" },
+          max: { $max: "$price" },
+          standard_desviation: { $stdDevPop: "$price" },
+        },
+      },
+      {
+        $project: {
+          average: '$average',
+          min: '$min',
+          max: '$max',
+          standard_desviation: '$standard_desviation'
         }
-      };
+      }
+    ]);
+    return result;
+  };
 
-    public infoTripPrice = async ( ) => {
-        try {
-          const result = await TripModel.aggregate([
-            { $match: {} },
-            {
-              $group: {
-                _id: null,
-                average: { $avg: "$price" },
-                min_price: { $min: "$price" },
-                max_price: { $max: "$price" },
-                standard_desviation: { $stdDevPop: "$price" },
-              },
-            },
-          ]);
-          return result
-        } catch (error) {
-          console.log(error)
-        }
-      };
+  public applicationXTrip = async () => {
+    const result = await ApplicationModel.aggregate([
+      { $match: {} },
+      {
+        $group: {
+          _id: "$trip",
+          totalApplicationsXTrip: { $sum: 1 },
+        },
+      },
+      {
+        $group: {
+          _id: null,
+          average: { $avg: "$totalApplicationsXTrip" },
+          min: { $min: "$totalApplicationsXTrip" },
+          max: { $max: "$totalApplicationsXTrip" },
+          standard_desviation: { $stdDevPop: "$totalApplicationsXTrip" },
+        },
+      },
+    ]);
 
-    public applicationXTrip = async ( ) => {
-        try {
-          const result = await ApplicationModel.aggregate([
-            { $match: {} },
-            {
-              $group: {
-                _id: "$trip",
-                totalApplicationsXTrip: { $sum: 1 },
-              },
-            },
-            {
-              $group: {
-                _id: null,
-                average: { $avg: "$totalApplicationsXTrip" },
-                min_application_per_trip: { $min: "$totalApplicationsXTrip" },
-                max_application_per_trip: { $max: "$totalApplicationsXTrip" },
-                standard_desviation: { $stdDevPop: "$totalApplicationsXTrip" },
-              },
-            },
-          ]);
-    
-          return result
-        } catch (error) {
-          console.log(error)
-        }
-      };
+    return result;
+  };
 
-    public infoTripManager = async ( ) => {
-        try {
-          const result = await TripModel.aggregate([
-            { $match: {} },
-            { $group: { _id: "$manager", total: { $sum: 1 } } },
-            {
-              $group: {
-                _id: null,
-                average: { $avg: "$total" },
-                min_trip_per_manager: { $min: "$total" },
-                max_trip_per_manager: { $max: "$total" },
-                standard_desviation: { $stdDevPop: "$total" },
-              },
-            },
-          ]);
-          return result
-        } catch (error) {
-          console.log(error)
-        }
-      };
+  public infoTripManager = async () => {
+    const result = await TripModel.aggregate([
+      { $group: { _id: "$manager", total: { $sum: 1 } } },
+      {
+        $group: {
+          _id: null,
+          average: { $avg: "$total" },
+          min: { $min: "$total" },
+          max: { $max: "$total" },
+          standard_desviation: { $stdDevPop: "$total" },
+        },
+      },
+    ]);
+    return result;
+  };
 }
 
-export default DashboardService
+export default DashboardService;

@@ -19,7 +19,7 @@ class ApplicationController {
         console.log(now)
         // trip?.start_date < now  || 
         if (!trip?.published || trip?.cancelled) {
-            res.status(401).json({msg: "Trip unauthorized to create an application trip"})
+            res.status(401).json({msg: "Trip is not available to applicate for it"})
         }
 
         try {
