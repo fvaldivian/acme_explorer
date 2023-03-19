@@ -78,7 +78,6 @@ class DashboardService {
 
   public infoTripManager = async () => {
     const result = await TripModel.aggregate([
-      { $match: {} },
       { $group: { _id: "$manager", total: { $sum: 1 } } },
       {
         $group: {

@@ -22,8 +22,9 @@ class DashboardRoutes implements Routes {
         this.router.get(`${this.path}/info-trip-price`,this.controller.infoTripPrice)
         this.router.get(`${this.path}/info-application-x-trip`,this.controller.applicationXTrip)
         this.router.get(`${this.path}/info-trip-per-manager`,this.controller.infoTripManager)
-        this.router.get(`${this.path}/test`,this.controller.genereteDashboardInfo)
-        this.router.get(`${this.path}/prueba`,this.controller.prueba) 
+        this.router.post(`${this.path}/compute-dashbboard`,this.controller.genereteDashboardInfo)
+        this.router.get(`${this.path}/prueba`,this.controller.getAllDashboard) 
+        this.router.get(`${this.path}/get-last-dashboard`,this.controller.getLastDashboard) 
     }
 }
 
