@@ -13,14 +13,14 @@ const SponsorshipSchemma = new Schema({
         type: Boolean,
     },
     sponsor: {
-        type: ActorModel,
+        type: Schema.Types.ObjectId,
         ref: 'Actor',
         index: true
     },
-
     trip: {
-        type: TripSchema,
-        ref: 'Trip'
+        type: Schema.Types.ObjectId,
+        ref: 'Trip',
+        index: true
     }
 })
 

@@ -2,8 +2,6 @@ import {Application} from "express";
 import express from "express";
 import cors from 'cors';
 import admin from 'firebase-admin';
-import { readFile } from 'fs/promises';
-import * as path from 'path'
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express'
 import mongoose, {set, connect} from "mongoose";
@@ -31,6 +29,7 @@ class App {
         this.initializeRoutes();
         this.initializeSwagger();
         this.initializeErrorHandling();
+        this.connectToFirebase();
     }
 
     listen(): void {
@@ -89,22 +88,16 @@ class App {
         })
     }
 
-
     connectToFirebase(): void {
-    //firebase config - start
-        this.app.use(function (_req, res, next) {
-            res.header('Access-Control-Allow-Origin', '*')
-            res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept, idToken') // watch out, if a custom parameter, like idToken, is added in the header, it must to be declared here to avoid CORS error
-            res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS')
-            next()
-        })
-
-        /*const serviceAccount = servicio;
         admin.initializeApp({
-        credential: admin.credential.cert(serviceAccount.toString()),
-        databaseURL: 'https://acme-explorer-auth.firebaseio.com'
-    })}*/
+            credential: admin.credential.cert({
+                projectId: process.env.FIREBASE_PROJECT_ID,
+                clientEmail: process.env.FIREBASE_CLIENT_EMAIL,
+                privateKey: process.env.FIREBASE_ADMIN_PRIVATE_KEY,
+            }),
+            databaseURL: 'https://acme-explorer-auth.firebaseio.com'
+        })
     }
 }
 
-export default App
+export default App;

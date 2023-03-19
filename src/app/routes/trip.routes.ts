@@ -3,6 +3,7 @@ import TripController from "../controllers/trip.controller";
 import {Routes} from "../util/routes.interface";
 import handleValidation from "../middlewares/ValidationMiddleware";
 import {createValidator} from "../validators/TripValidator";
+import {verifyActorByRole} from "../controllers/auth.controller";
 
 class TripRoutes implements Routes {
     public path = "/v1/trips";
@@ -18,10 +19,13 @@ class TripRoutes implements Routes {
             this.path,
             createValidator,
             handleValidation,
+            verifyActorByRole(['ADMINISTRATOR', 'MANAGER']),
             this.controller.create
         );
         this.router.get(this.path, this.controller.getAll);
         this.router.get(`${this.path}/:id`, this.controller.get);
+        this.router.get(`${this.path}/private`, this.controller.getFromAuth);
+        this.router.put(`${this.path}/:id/cancel`, this.controller.cancel);
         this.router.put(
             `${this.path}/:id`,
             createValidator,
