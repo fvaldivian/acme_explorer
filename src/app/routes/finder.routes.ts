@@ -27,8 +27,7 @@ class FinderRoutes implements Routes {
             this.controller.updateFinder
         );
         this.router.delete(`${this.path}/:id`, handleValidation, this.controller.deleteFinder);
-        this.router.get(`${this.path}/trips-finded`, this.controller.getTripsFinded);
-        
+        this.router.get(`${this.path}/trips-finded`, this.controller.getTripsFinded);   
     }
 }
 
