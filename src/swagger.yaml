@@ -43,7 +43,24 @@ paths:
         '500':
           description: Error trying to create actor.
 
-  /v1/actors/{actorId}:
+  /v1/actors/list:
+    get:
+      tags:
+        - Actors
+      summary: Find manager actors
+      responses:
+        '200':
+          description: Manager actors successfully retrieved.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Actor not found.
+        '500':
+          description: Error trying to get all actors.
+
+  /v1/actors/:{actorId}:
     get:
       tags:
         - Actors
@@ -115,7 +132,7 @@ paths:
         '500':
           description: Error trying to delete actor.
   
-  /v1/actors/{actorId}/activated:    
+  /v1/actors/:{actorId}/activate:
     patch:
       tags:
         - Actors
@@ -138,7 +155,82 @@ paths:
           description: Actor not found.
         '500':
           description: Error trying to update actor.
+
+  /v1/actors/:{actorId}/disable:
+    patch:
+      tags:
+        - Actors
+      summary: Disable an actor
+      parameters:
+        - name: actorId
+          in: path
+          description: ID of actor to return
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Actors successfully disabled.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Actor not found.
+        '500':
+          description: Error trying to update actor.
   
+  /v1/actors/explorer:
+    post:
+      tags:
+        - Actors
+      summary: Create an explorer actor
+      responses:
+        '200':
+          description: Explorer actor successfully created.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Actor not found.
+        '500':
+          description: Error trying to create explorer actor.
+  
+  /v1/actors/manager:
+    post:
+      tags:
+        - Actors
+      summary: Create a manager actor
+      responses:
+        '200':
+          description: Manager actor successfully created.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Actor not found.
+        '500':
+          description: Error trying to create manager actor.
+   
+  /v1/actors/administrator:
+    post:
+      tags:
+        - Actors
+      summary: Create an administrator actor
+      responses:
+        '200':
+          description: Admonistrator actor successfully created.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Actor not found.
+        '500':
+          description: Error trying to create administrator actor.
+
   /v1/trips:
     get:
       tags:
@@ -175,7 +267,24 @@ paths:
         '500':
           description: Error trying to create trip.
 
-  /v1/trips/{tripId}:
+  /v1/trips/search:
+    get:
+      tags:
+        - Trips
+      summary: Find Trips
+      responses:
+        '200':
+          description: Trip successfully retrieved.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Trip not found.
+        '500':
+          description: Error trying to get trip.
+
+  /v1/trips/:{tripId}:
     get:
       tags:
         - Trips
@@ -247,7 +356,7 @@ paths:
         '500':
           description: Error trying to delete trip.
 
-  /v1/trips/{tripId}/search:
+  /v1/trips/:{tripId}/search:
     get:
       tags:
         - Trips
@@ -307,7 +416,7 @@ paths:
         '500':
           description: Error trying to create application.
 
-  /v1/applications/{applicationId}:
+  /v1/applications/:{applicationId}:
     get:
       tags:
         - Applications
@@ -379,7 +488,7 @@ paths:
         '500':
           description: Error trying to delete application.
 
-  /v1/applications/{applicationId}/denied:
+  /v1/applications/:{applicationId}/denied:
     get:
       tags:
         - Applications
@@ -403,7 +512,7 @@ paths:
         '500':
           description: Error trying to deny eligible application.
 
-  /v1/applications/{applicationId}/approved:
+  /v1/applications/:{applicationId}/approved:
     get:
       tags:
         - Applications
@@ -463,7 +572,7 @@ paths:
         '500':
           description: Error trying to create Sponsorship.
 
-  /v1/sponsorships/{sponsorshipId}:
+  /v1/sponsorships/:{sponsorshipId}:
     get:
       tags:
         - Sponsorships
@@ -539,7 +648,7 @@ paths:
         '500':
           description: Error trying to delete sponsorship.
 
-  /v1/sponsorships/{sponsorshipId}/denied:
+  /v1/sponsorships/:{sponsorshipId}/denied:
     patch:
       tags:
         - Sponsorships
@@ -567,7 +676,7 @@ paths:
         '500':
           description: Error trying to deny sponsorship.
 
-  /v1/sponsorships/{sponsorshipId}/approved:
+  /v1/sponsorships/:{sponsorshipId}/approved:
     patch:
       tags:
         - Sponsorships
@@ -631,6 +740,23 @@ paths:
         '500':
           description: Error trying to create Finder.
 
+  /v1/finder/search-trip:
+    get:
+      tags:
+        - Finder
+      summary: Find Trip
+      responses:
+        '200':
+          description: Trip successfully retrieved.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Trip not found.
+        '500':
+          description: Error trying to get Trip.
+
   /v1/finder/{finderId}:
     put:
       tags:
@@ -680,6 +806,74 @@ paths:
           description: Finder not found.
         '500':
           description: Error trying to delete finder.
+
+  /v1/dashboard:
+    get:
+      tags:
+        - Dashboard
+      summary: Find Dashboard
+      responses:
+        '200':
+          description: Dashboard successfully retrieved.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Dashboard not found.
+        '500':
+          description: Error trying to get dashboard.
+
+  /v1/dashboard/info-trip-price:
+    get:
+      tags:
+        - Dashboard
+      summary: Find Dashboard
+      responses:
+        '200':
+          description: Dashboard successfully retrieved.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Dashboard not found.
+        '500':
+          description: Error trying to get dashboard.
+
+  /v1/dashboard/info-application-x-trip:
+    get:
+      tags:
+        - Dashboard
+      summary: Find Dashboard
+      responses:
+        '200':
+          description: Dashboard successfully retrieved.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Dashboard not found.
+        '500':
+          description: Error trying to get dashboard.
+
+  /v1/dashboard/info-trip-per-manager:
+    get:
+      tags:
+        - Dashboard
+      summary: Find Dashboard
+      responses:
+        '200':
+          description: Dashboard successfully retrieved.
+        '401':
+          description: Unauthorized.
+        '403':
+          description: You don't have right role to carry out this operation.
+        '404':
+          description: Dashboard not found.
+        '500':
+          description: Error trying to get dashboard.
 
 components:    
   securitySchemes:
