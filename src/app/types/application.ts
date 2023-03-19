@@ -5,4 +5,6 @@ export interface Application {
     denied: boolean
     reason: string
     isPaid: boolean
+    explorer: any
+    trip: any
 }
