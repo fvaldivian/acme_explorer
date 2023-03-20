@@ -1,7 +1,6 @@
 import { Request, Response } from "express";
 import finderModel from "../models/finder.model";
 import { TripModel } from "../models/trip.model";
-import { getUserId } from "./auth.controller";
 import { ObjectId } from "mongodb";
 /***
  *  Hacer un nuevo modelo para guardar los datos
@@ -66,9 +65,6 @@ class FinderController {
     const { keyword, low_price, high_price, from_date, to_date } = req.body;
     const from_date_typed = new Date(from_date);
     const to_date_typed = new Date(to_date);
-    //const idToken = req.header('idToken')
-    //let authExplorerId = await getUserId(idToken)
-    //let actor = String(authExplorerId) // revisar cuando funcione
     try {
       const ids = await TripModel.aggregate([
         {

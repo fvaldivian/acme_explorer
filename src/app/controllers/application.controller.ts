@@ -1,9 +1,8 @@
 import {Request, Response} from "express";
 import {ApplicationModel} from "../models/application.model";
-import { ActorModel } from "../models/actor.model";
-import { TripModel } from '../models/trip.model';
-import { getUserId } from "./auth.controller";
-import { Application } from '../types/application';
+import {ActorModel} from "../models/actor.model";
+import {TripModel} from '../models/trip.model';
+import {Application} from '../types/application';
 
 class ApplicationController {
 
@@ -46,20 +45,18 @@ class ApplicationController {
         }
     };
 
-    public getApplicationById = async (req: Request, res: Response) => {
+    public getApplicationById = async (req: any, res: Response) => {
         const {id} = req.params;
         // check if application is from auth explorer
-       const idToken = req.header('idToken')
-      
         try {
             const applicationFound = await ApplicationModel.findById(id);
-            let authexplorerId = await getUserId(idToken)
-            let authexplorer = String(authexplorerId) 
-            let applicationExplorerId = applicationFound?.explorer
-            applicationExplorerId = String(applicationExplorerId)
-            if(authexplorer !== applicationExplorerId){
-               return res.status(401).send('This explorer does have permissions to applicate this trip')
-            }
+            // const authexplorerId = req.authenticated;
+            // const authexplorer = String(authexplorerId);
+            // let applicationExplorerId = applicationFound?.explorer
+            // applicationExplorerId = String(applicationExplorerId)
+            // if(authexplorer !== applicationExplorerId){
+            //    return res.status(401).send('This explorer does have permissions to applicate this trip')
+            // }
             if (applicationFound === null) {
                 return res.status(404).json({msg: "Application not found"});
             } else return res.send(applicationFound);
@@ -82,39 +79,37 @@ class ApplicationController {
         }
     };
 
-    public cancelAnApplication = async (req: Request, res: Response) => {
-
-        const idToken = req.header('idToken')
+    public cancelAnApplication = async (req: any, res: Response) => {
         const applicationId = req.params.applicationId
         try {
             const applicationFound = await ApplicationModel.findById(applicationId);
-            let authexplorerId = await getUserId(idToken)
-            let authexplorer = String(authexplorerId) 
-            let applicationExplorerId = applicationFound?.explorer
-            applicationExplorerId = String(applicationExplorerId)
-            if(authexplorer !== applicationExplorerId){
-               return res.status(401).send('This explorer does have permissions to applicate this trip')
-            }else{
-                if (
-                    applicationFound?.status === "PENDING" ||
-                    applicationFound?.status === "ACCEPTED"
-                  ) {
-                    ApplicationModel.findOneAndUpdate(
-                      { _id: req.params.applicationId },
-                      { status: "CANCELLED" },
-                      { new: true },
-                      function (err, application) {
+            // const authexplorerId = req.authenticated;
+            // const authexplorer = String(authexplorerId)
+            // let applicationExplorerId = applicationFound?.explorer
+            // applicationExplorerId = String(applicationExplorerId)
+            // if (authexplorer !== applicationExplorerId) {
+            //     return res.status(401).send('This explorer does have permissions to applicate this trip')
+            // } else {
+            if (
+                applicationFound?.status === "PENDING" ||
+                applicationFound?.status === "ACCEPTED"
+            ) {
+                ApplicationModel.findOneAndUpdate(
+                    {_id: req.params.applicationId},
+                    {status: "CANCELLED"},
+                    {new: true},
+                    (err, application) => {
                         if (err) {
-                          res.status(400).send(err);
+                            res.status(400).send(err);
                         } else {
-                          res.status(201).json(application);
+                            res.status(201).json(application);
                         }
-                      }
-                    );
-                  }else {
-                    res.status(400).send({ message: 'To cancel an application, must be pending or accepted' })
-                  }
+                    }
+                );
+            } else {
+                res.status(400).send({message: 'To cancel an application, must be pending or accepted'})
             }
+            // }
         } catch (error) {
             res.status(500).send(error)
         }
@@ -151,7 +146,7 @@ class ApplicationController {
             return res.status(500).send(err);
         }
     };
-    
+
     public approvedApplication = async (req: Request, res: Response) => {
         if (!req.body.reason) {
             return res.status(400).json({msg: "Send approved reason"});
@@ -171,72 +166,69 @@ class ApplicationController {
         }
     };
 
-    public dueATrip = async (req: Request, res: Response) => {
-        const idToken = req.header('idToken')
+    public dueATrip = async (req: any, res: Response) => {
         const applicationId = req.params.applicationId
         try {
             const applicationFound = await ApplicationModel.findById(applicationId);
-            let authexplorerId = await getUserId(idToken)
-            let authexplorer = String(authexplorerId) 
-            let applicationExplorerId = applicationFound?.explorer
-            applicationExplorerId = String(applicationExplorerId)
-            if(authexplorer !== applicationExplorerId){
-               return res.status(401).send('This explorer does have permissions to applicate this trip')
-            }else{
-                if(applicationFound?.status === "PENDING"){
-                        ApplicationModel.findOneAndUpdate(
-                          { _id: req.params.applicationId },
-                          { status: "DUE" },
-                          { new: true },
-                          function (err, application) {
+            // const authexplorerId = req.authenticated;
+            // const authexplorer = String(authexplorerId);
+            // let applicationExplorerId = applicationFound?.explorer
+            // applicationExplorerId = String(applicationExplorerId)
+            // if (authexplorer !== applicationExplorerId) {
+            //     return res.status(401).send('This explorer does have permissions to applicate this trip')
+            // } else {
+                if (applicationFound?.status === "PENDING") {
+                    ApplicationModel.findOneAndUpdate(
+                        {_id: req.params.applicationId},
+                        {status: "DUE"},
+                        {new: true},
+                        function (err, application) {
                             if (err) {
-                              res.status(400).send(err);
+                                res.status(400).send(err);
                             } else {
-                              res.status(201).json(application);
+                                res.status(201).json(application);
                             }
-                          }
-                        );
-                      }else {
-                    res.status(400).send({ message: 'An application must be pendind to due it' })
-                  }
-            }
+                        }
+                    );
+                } else {
+                    res.status(400).send({message: 'An application must be pendind to due it'})
+                }
+            // }
         } catch (error) {
             res.status(500).send(error)
         }
 
     }
 
-    public payForATrip = async (req: Request, res: Response) => {
-        
-        const idToken = req.header('idToken')
+    public payForATrip = async (req: any, res: Response) => {
         const applicationId = req.params.applicationId
         try {
             const applicationFound = await ApplicationModel.findById(applicationId);
-            let authexplorerId = await getUserId(idToken)
-            let authexplorer = String(authexplorerId) 
-            let applicationExplorerId = applicationFound?.explorer
-            applicationExplorerId = String(applicationExplorerId)
-            if(authexplorer !== applicationExplorerId){
-               return res.status(401).send('This explorer does have permissions to applicate this trip')
-            }else{
-                if(applicationFound?.status == "DUE"){
+            // const authexplorerId = req.authenticated;
+            // const authexplorer = String(authexplorerId);
+            // let applicationExplorerId = applicationFound?.explorer
+            // applicationExplorerId = String(applicationExplorerId)
+            // if (authexplorer !== applicationExplorerId) {
+            //     return res.status(401).send('This explorer does have permissions to applicate this trip')
+            // } else {
+                if (applicationFound?.status == "DUE") {
 
                     ApplicationModel.findOneAndUpdate(
-                      { _id: req.params.applicationId },
-                      { status: "ACCEPTED" },
-                      { new: true },
-                      function (err, application) {
-                        if (err) {
-                          res.status(400).send(err);
-                        } else {
-                          res.status(201).json(application);
+                        {_id: req.params.applicationId},
+                        {status: "ACCEPTED"},
+                        {new: true},
+                        function (err, application) {
+                            if (err) {
+                                res.status(400).send(err);
+                            } else {
+                                res.status(201).json(application);
+                            }
                         }
-                      }
                     );
-                  }else {
-                    res.status(400).send({ message: 'The application must be in DUE status' })
-                  }
-            }
+                } else {
+                    res.status(400).send({message: 'The application must be in DUE status'})
+                }
+            // }
         } catch (error) {
             res.status(500).send(error)
         }
