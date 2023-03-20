@@ -6,7 +6,9 @@
 
 ## 2 - Start application with Docker.
 
-    docker-compose --env-file .env up --build 
+    docker-compose --env-file .env.dev up --build 
+
+    docker-compose --env-file .env.dev down 
 
 ## 3 - In terminal generate data: 
 

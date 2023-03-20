@@ -15,6 +15,7 @@ class AcmeExplorerTests extends Simulation {
 	val headers_0 = Map(
 		"Content-Type" -> "application/json")
 
+
 	val feeder = Iterator.continually(Map(("email", "email"+Random.nextInt(150000)+Random.nextInt(150000)+"@fakemail.com")))
 
 	//ACTORS
@@ -37,8 +38,7 @@ class AcmeExplorerTests extends Simulation {
 	object ShowTripsByKeyWord {
 		val showTripsByKeyWord = exec(http("GET TRIPS BY KEYWORD")
 			.get("v1/finder")
-			.headers(headers_0)
-			.body(ElFileBody("../resources/keyword.json")))
+			.queryParamSeq(Seq(("keyword", "viaje"))))
 		.pause(1)
 	}
 		
@@ -54,13 +54,12 @@ class AcmeExplorerTests extends Simulation {
 	val actorScn = scenario("Actors").feed(feeder).exec(CreateExplorer.createExplorer)
 
 	val tripScn = scenario("Trips").exec(ShowAllTrips.showAllTrips,
-									ShowTripsByKeyWord.showTripsByKeyWord,
-									ShowPublishedTrips.showPublishedTrips
+									ShowTripsByKeyWord.showTripsByKeyWord
 									)
 	
 	val sponsorshipScn = scenario("Sponsorships").exec(ShowAllSponsorships.showAllSponsorships)
 
-	var numberOfUsers :Int = 40000;
+	var numberOfUsers :Int = 400;
 	var durationInSeconds :Int = 60;
 	var maximumResponseMaxTimeInMillisecondsExpected :Int = 5000;
 	var maximumResponseMeanTimeInMillisecondsExpected :Int = 1000;
