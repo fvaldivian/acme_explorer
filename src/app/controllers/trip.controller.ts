@@ -2,6 +2,7 @@ import {Request, Response} from "express";
 import {ActorModel} from "../models/actor.model";
 import {PipelineStage} from "mongoose";
 import {TripModel} from "../models/trip.model";
+import {ApplicationModel} from "../models/application.model";
 
 
 class TripController {
@@ -12,9 +13,10 @@ class TripController {
         }
         try {
             const newTrip = new TripModel(req.body);
-            const actor = req.authenticated;
-            newTrip.manager = actor._id;
-            if (!(actor.role.indexOf("MANAGER") > -1)) {
+            // const actor = req.authenticated;
+            const actor = await ActorModel.findOne({_id: newTrip.manager}).exec();
+            newTrip.manager = actor?._id;
+            if (!(actor?.role.indexOf("MANAGER") > -1)) {
                 return res.status(401).json('Only managers can create trips');
             }
             await newTrip.save();
@@ -66,9 +68,9 @@ class TripController {
     public update = async (req: any, res: Response) => {
         const {id} = req.params;
         const trip = await TripModel.findById(id);
-        if (req.authenticated._id !== trip?.manager) {
-            return res.status(401).send('This manager does not have permissions to edit this trip');
-        }
+        // if (req.authenticated._id !== trip?.manager) {
+        //     return res.status(401).send('This manager does not have permissions to edit this trip');
+        // }
         if (trip?.published) {
             return res.status(400).send('Cannot update a published trip');
         }
@@ -76,7 +78,7 @@ class TripController {
             const newTrip = await TripModel.updateOne(
                 {_id: id},
                 {
-                    $set: {...req.body, manager: req.authenticated._id},
+                    $set: {...req.body},
                 }
             );
             return res.send(newTrip);
@@ -90,9 +92,9 @@ class TripController {
     public delete = async (req: any, res: Response) => {
         const {id} = req.params;
         const trip = await TripModel.findById(id);
-        if (req.authenticated._id !== trip?.manager) {
-            return res.status(401).send('This manager does not have permissions to delete this trip');
-        }
+        // if (req.authenticated._id !== trip?.manager) {
+        //     return res.status(401).send('This manager does not have permissions to delete this trip');
+        // }
         if (trip?.published) {
             return res.status(400).send('Cannot delete a published trip');
         }
@@ -111,9 +113,9 @@ class TripController {
         const {id} = req.params;
         const trip = await TripModel.findById(id);
         const reason = req.body.reason;
-        if (req.authenticated._id !== trip?.manager) {
-            return res.status(401).send('This manager does not have permissions to cancel this trip');
-        }
+        // if (req.authenticated._id !== trip?.manager) {
+        //     return res.status(401).send('This manager does not have permissions to cancel this trip');
+        // }
         if (trip?.published) {
             return res.status(400).send('Cannot cancel a published trip');
         }
@@ -150,6 +152,17 @@ class TripController {
             }
             return res.status(200).send(result);
         } catch (error) {
+            return res.status(500).send(error);
+        }
+    };
+
+    public getTripApplications = async (req: Request, res: Response) => {
+        try {
+            const {id} = req.params;
+            const applications = await ApplicationModel.find({trip: id})
+            return res.status(200).send(applications);
+        } catch (error) {
+            console.log(error)
             return res.status(500).send(error);
         }
     };

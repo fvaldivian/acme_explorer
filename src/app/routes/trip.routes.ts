@@ -15,25 +15,15 @@ class TripRoutes implements Routes {
     }
 
     private initializeRoutes() {
-        this.router.post(
-            this.path,
-            createValidator,
-            handleValidation,
-            verifyActorByRole(['ADMINISTRATOR', 'MANAGER']),
-            this.controller.create
-        );
         this.router.get(this.path, this.controller.getAll);
+        this.router.post(this.path, createValidator, handleValidation, /*verifyActorByRole(['MANAGER']),*/ this.controller.create);
+        this.router.get(`${this.path}/private`, verifyActorByRole(['MANAGER']), this.controller.getFromAuth);
         this.router.get(`${this.path}/:id`, this.controller.get);
-        this.router.get(`${this.path}/private`, this.controller.getFromAuth);
-        this.router.put(`${this.path}/:id/cancel`, this.controller.cancel);
-        this.router.put(
-            `${this.path}/:id`,
-            createValidator,
-            handleValidation,
-            this.controller.update
-        );
-        this.router.delete(`${this.path}/:id`, this.controller.delete);
+        this.router.put(`${this.path}/:id`, createValidator, handleValidation, /*verifyActorByRole(['MANAGER']),*/ this.controller.update);
+        this.router.delete(`${this.path}/:id`, /*verifyActorByRole(['MANAGER']),*/ this.controller.delete);
+        this.router.put(`${this.path}/:id/cancel`, /*verifyActorByRole(['MANAGER']),*/ this.controller.cancel);
         this.router.get(`${this.path}/search`, this.controller.search);
+        this.router.get(`${this.path}/:id/applications`, /*verifyActorByRole(['MANAGER']),*/ this.controller.getTripApplications);
     }
 }
 
