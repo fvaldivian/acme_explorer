@@ -16,6 +16,7 @@
     "@types/node-cron": "^3.0.7",
     "async": "^3.2.4",
     "bcrypt": "^5.1.0",
+    "chai-http": "^4.3.0",
     "concurrently": "^7.6.0",
     "cors": "^2.8.5",
     "cron": "^2.2.0",

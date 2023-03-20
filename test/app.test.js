@@ -1,4 +1,4 @@
-const app = require('../app/app');
+const app = require('../dist/src/app/app');
 const chai = require('chai');
 const chaiHttp = require('chai-http');
 const { faker } = require('@faker-js/faker');
@@ -7,12 +7,12 @@ const massiveLoadTools = require('../massiveLoad/massiveLoadTools');
 const { expect } = chai;
 chai.use(chaiHttp);
 
-const Actor = require('../app/models/actor.model');
-const Sponsorship = require('../app/models/sponsorship.model');
-const Trip = require('../app/models/trip.model');
-const Application = require('../app/models/application.model');
-const Finder = require('../app/models/finder.model');
-const DashboardInformation = require('../app/models/dashboard.model');
+const Actor = require('../dist/src/app/models/actor.model');
+const Sponsorship = require('../dist/src/app/models/sponsorship.model');
+const Trip = require('../dist/src/app/models/trip.model');
+const Application = require('../dist/src/app/models/application.model');
+const Finder = require('../dist/src/app/models/finder.model');
+const DashboardInformation = require('../dist/src/app/models/dashboardInfo.model');
 
 
 
