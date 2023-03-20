@@ -1,0 +1,2756 @@
+{
+	"info": {
+		"_postman_id": "2fd05605-dbd9-4203-83b6-b95a41f48243",
+		"name": "Generated from HAR",
+		"description": "HAR To Postman Generated Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25104435"
+	},
+	"item": [
+		{
+			"name": "localhost:8088/v1/finder/trips-finded",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/finder/trips-finded",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"finder",
+						"trips-finded"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/finder/trips-finded",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"finder",
+								"trips-finded"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1152"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"480-RBsoFoYGkZ3lrYzoPhDUgW3ieZU\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 17:01:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/dashboard/get-last-dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/dashboard/get-last-dashboard",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"get-last-dashboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/dashboard/get-last-dashboard",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"get-last-dashboard"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "677"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2a5-O/wY0RgKnwSy60pO7xQmDljfFL0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 12:55:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/dashboard/prueba",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/dashboard/prueba",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"prueba"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/dashboard/prueba",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"prueba"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "6103"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"17d7-EqiP/41rp5EMbNpFULXJzQyMrtA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 10:48:59 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/dashboard/compute-dashbboard",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/dashboard/compute-dashbboard",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"compute-dashbboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/dashboard/compute-dashbboard",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"compute-dashbboard"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "758"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2f6-0+bPOCA82GFbpdt5SU3TQRrf2jY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 12:55:32 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/finder/search-trip",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImlhdCI6MTY3OTI0MTYzOSwiZXhwIjoxNjc5MjQ1MjM5LCJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay13NGV2NUBhY21lLWV4cGxvcmVyLWF1dGguaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay13NGV2NUBhY21lLWV4cGxvcmVyLWF1dGguaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJ1aWQiOiJhbGl0b21jQGV4YW1wbGUuY29tIn0.YgdXM-YJ2triGCxCKGYHCH3yIbweArnm_SyEaSGIsqx15eOVmwkkHfjn80FjGVs2_cl3xXXAnghoS55U8X6ElO_KZ-E--Vwn24maWkW56UCBo55cD9leAPczTYw2IRR1fdDiY2lOvSUSqWthbkxrTnCPTodQxPFaOLjjVA_TO219Q2uCo39hjtXoECeH2lL8RQc-v1W61ebKP26hlGce01_AH3dYQCNPjEiLEZVja3f-5NHdEWI1sU919nHyUPxDxNW07bQp0ujv3sLF4PYT7zI62mYZ8mFLewMPPS9Z8vmWLRG2SZt3bdwAyDS5zDJVZ3XojmNyS9CE9Clf1ewPEg"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/finder/search-trip",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"finder",
+						"search-trip"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJodHRwczovL2lkZW50aXR5dG9vbGtpdC5nb29nbGVhcGlzLmNvbS9nb29nbGUuaWRlbnRpdHkuaWRlbnRpdHl0b29sa2l0LnYxLklkZW50aXR5VG9vbGtpdCIsImlhdCI6MTY3OTI0MTYzOSwiZXhwIjoxNjc5MjQ1MjM5LCJpc3MiOiJmaXJlYmFzZS1hZG1pbnNkay13NGV2NUBhY21lLWV4cGxvcmVyLWF1dGguaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJzdWIiOiJmaXJlYmFzZS1hZG1pbnNkay13NGV2NUBhY21lLWV4cGxvcmVyLWF1dGguaWFtLmdzZXJ2aWNlYWNjb3VudC5jb20iLCJ1aWQiOiJhbGl0b21jQGV4YW1wbGUuY29tIn0.YgdXM-YJ2triGCxCKGYHCH3yIbweArnm_SyEaSGIsqx15eOVmwkkHfjn80FjGVs2_cl3xXXAnghoS55U8X6ElO_KZ-E--Vwn24maWkW56UCBo55cD9leAPczTYw2IRR1fdDiY2lOvSUSqWthbkxrTnCPTodQxPFaOLjjVA_TO219Q2uCo39hjtXoECeH2lL8RQc-v1W61ebKP26hlGce01_AH3dYQCNPjEiLEZVja3f-5NHdEWI1sU919nHyUPxDxNW07bQp0ujv3sLF4PYT7zI62mYZ8mFLewMPPS9Z8vmWLRG2SZt3bdwAyDS5zDJVZ3XojmNyS9CE9Clf1ewPEg"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/finder/search-trip",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"finder",
+								"search-trip"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "474"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1da-75JZszBkYPRgMui/Z6jdtU6SKt8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 18:39:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/dashboard/info-trip-per-manager",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/dashboard/info-trip-per-manager",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"info-trip-per-manager"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/dashboard/info-trip-per-manager",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"info-trip-per-manager"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "106"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"6a-OAd2Xels6DqPeDPAEDaxjft2M0s\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 18:06:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/dashboard/info-application-x-trip",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/dashboard/info-application-x-trip",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"info-application-x-trip"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/dashboard/info-application-x-trip",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"info-application-x-trip"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "88"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"58-oszirfYm7Jt/CMk7dar6VwDgBHo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 17:24:55 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/dashboard/info-trip-price",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/dashboard/info-trip-price",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"dashboard",
+						"info-trip-price"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/dashboard/info-trip-price",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"dashboard",
+								"info-trip-price"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "93"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5d-s+htlnhz0fSWmb8sFgGlBxYk7Qg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 08:51:19 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/dashboard",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/dashboard",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"dashboard"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/dashboard",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"dashboard"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "233"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"e9-UmJmqliZVmh5KJxchbWPx/fQV+Y\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 11:41:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/actors/64035f7c5a11f1f8e0cb5083",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/actors/64035f7c5a11f1f8e0cb5083",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"actors",
+						"64035f7c5a11f1f8e0cb5083"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/actors/64035f7c5a11f1f8e0cb5083",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"actors",
+								"64035f7c5a11f1f8e0cb5083"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "277"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"115-ISl2sSIpmv1kM4Zf1U+BIn6uYpI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Mar 2023 15:12:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v2/login/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v2/login/",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v2",
+						"login",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v2/login/",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v2",
+								"login",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1081"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"439-xnvDKcsgblWmCDOqh3Mpw0RZh7g\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 16:00:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/config/63f3507940f68ec380575692/flatrate",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692/flatrate",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"config",
+						"63f3507940f68ec380575692",
+						"flatrate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692/flatrate",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"config",
+								"63f3507940f68ec380575692",
+								"flatrate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "126"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7e-y3at7kEVXTZQnUERWCm7WS+tX7Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 12:55:21 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/config/63f3507940f68ec380575692/results",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692/results",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"config",
+						"63f3507940f68ec380575692",
+						"results"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692/results",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"config",
+								"63f3507940f68ec380575692",
+								"results"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7b-rrtjjrnGu0NAZVXKSbksx0vvlvA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 12:54:33 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/config/63f3507940f68ec380575692/cache",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692/cache",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"config",
+						"63f3507940f68ec380575692",
+						"cache"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692/cache",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"config",
+								"63f3507940f68ec380575692",
+								"cache"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "123"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7b-rrtjjrnGu0NAZVXKSbksx0vvlvA\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 12:53:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/actors/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/actors/",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"actors",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/actors/",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"actors",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2-l9Fw4VUO7kr8CvBlt4zaMCqXZ0w\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Mar 2023 14:32:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/actors/63f49ae9ceb9bff987f1d86e/activate",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/actors/63f49ae9ceb9bff987f1d86e/activate",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"actors",
+						"63f49ae9ceb9bff987f1d86e",
+						"activate"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/actors/63f49ae9ceb9bff987f1d86e/activate",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"actors",
+								"63f49ae9ceb9bff987f1d86e",
+								"activate"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "258"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"102-9q+Qur3vVVBpti92xwNcIsvENws\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 19:12:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/actors/administrator",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/actors/administrator",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"actors",
+						"administrator"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 422",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/actors/administrator",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"actors",
+								"administrator"
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "96"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"60-b6PVgscj8ydEqHy7NfWoHlUZHhQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 10:43:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/actors/explorer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/actors/explorer",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"actors",
+						"explorer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/actors/explorer",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"actors",
+								"explorer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "278"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"116-TiSHAd1JNF/iNdbvtMn1b0AK0gQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Mar 2023 14:40:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/finder/search",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/finder/search",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"finder",
+						"search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found / 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/finder/search",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"finder",
+								"search"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Security-Policy",
+							"value": "default-src 'none'"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/html; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "155"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Mar 2023 17:29:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "text/html; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/finder/63f3770b750439267e906f42",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/finder/63f3770b750439267e906f42",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"finder",
+						"63f3770b750439267e906f42"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/finder/63f3770b750439267e906f42",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"finder",
+								"63f3770b750439267e906f42"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "169"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a9-qqVlnuR5J0K5CmhHO9ITfD1El8s\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 14:34:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/finder/63f3770b750439267e906f42",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/finder/63f3770b750439267e906f42",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"finder",
+						"63f3770b750439267e906f42"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/finder/63f3770b750439267e906f42",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"finder",
+								"63f3770b750439267e906f42"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-XE4LqSKK8lMBgnDPfq7vp2yCSG8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 14:34:13 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/finder",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/finder",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"finder"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/finder",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"finder"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5233"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1471-n855EDm3y4mTtbgZ0t38GH9UgmA\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 16:32:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/finder",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/finder",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"finder"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "created / 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/finder",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"finder"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "171"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"ab-FW6f7gBzF6Lehv5JTs/4WFtgnS8\""
+						},
+						{
+							"key": "Date",
+							"value": "Sun, 19 Mar 2023 15:32:37 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/config/63f3507940f68ec380575692",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"config",
+						"63f3507940f68ec380575692"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/config/63f3507940f68ec380575692",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"config",
+								"63f3507940f68ec380575692"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "22"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"16-XnnhK0X0BNqhiyOKVvk05SLOj24\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 20 Feb 2023 10:59:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/actors/63f499cdf518f3c18f30740c/disable",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/actors/63f499cdf518f3c18f30740c/disable",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"actors",
+						"63f499cdf518f3c18f30740c",
+						"disable"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/actors/63f499cdf518f3c18f30740c/disable",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"actors",
+								"63f499cdf518f3c18f30740c",
+								"disable"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "269"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10d-xmYQsR5MLY5EQLZYtTnksvc91CY\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Feb 2023 19:12:20 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/applications/63e25127417328860d402553/denied",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/applications/63e25127417328860d402553/denied",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"applications",
+						"63e25127417328860d402553",
+						"denied"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/applications/63e25127417328860d402553/denied",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"applications",
+								"63e25127417328860d402553",
+								"denied"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "92"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"5c-XE4LqSKK8lMBgnDPfq7vp2yCSG8\""
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 07 Feb 2023 13:25:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/actors/",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/actors/",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"actors",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/actors/",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"actors",
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1939"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"793-XKxl6oWpidSWkG4xbmtQx0j1jLQ\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 12:36:36 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/applications/63f25d73746cc924584e8d37",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/applications/63f25d73746cc924584e8d37",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"applications",
+						"63f25d73746cc924584e8d37"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found / 404",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/applications/63f25d73746cc924584e8d37",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"applications",
+								"63f25d73746cc924584e8d37"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-sG0pD/T3bGdkZPq6Z+DEc2Au5yc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Mar 2023 17:32:39 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/applications/63e24f579ec0c4512872a1cd",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/applications/63e24f579ec0c4512872a1cd",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"applications",
+						"63e24f579ec0c4512872a1cd"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": " / 422",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/applications/63e24f579ec0c4512872a1cd",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"applications",
+								"63e24f579ec0c4512872a1cd"
+							]
+						}
+					},
+					"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+					"code": 422,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "71"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"47-CjN+bVwUSsRfhFkRRvW+u+D3Jkk\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Mar 2023 17:32:29 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/applications/63f25aa10a3cd1dde1f1097e",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/applications/63f25aa10a3cd1dde1f1097e",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"applications",
+						"63f25aa10a3cd1dde1f1097e"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "not found / 404",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/applications/63f25aa10a3cd1dde1f1097e",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"applications",
+								"63f25aa10a3cd1dde1f1097e"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "31"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1f-sG0pD/T3bGdkZPq6Z+DEc2Au5yc\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 04 Mar 2023 17:32:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/applications",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/applications",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"applications"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/applications",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "2943"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"b7f-Yc3+NiwVncA0jaBwjjwwWDtACYs\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Mar 2023 15:47:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/applications",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"url": {
+					"raw": "{{baseURL1}}/v1/applications",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"applications"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "created / 201",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"url": {
+							"raw": "{{baseURL1}}/v1/applications",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"applications"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "242"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"f2-LViDQGj6k5v1lOeCroa7JbFTqXo\""
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 17 Mar 2023 15:24:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		},
+		{
+			"name": "localhost:8088/v1/trips",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL1}}/v1/trips",
+					"host": [
+						"{{baseURL1}}"
+					],
+					"path": [
+						"v1",
+						"trips"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "successfully / 200",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseURL1}}/v1/trips",
+							"host": [
+								"{{baseURL1}}"
+							],
+							"path": [
+								"v1",
+								"trips"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "text",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "5760"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1680-0g1eHmos7Dsr90MqaHGY4ssGh6Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Mar 2023 17:33:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "application/json; charset=utf-8 content type is not supported in the response body"
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL1",
+			"value": "http://localhost:8088",
+			"type": "any"
+		},
+		{
+			"key": "baseURL2",
+			"value": "http://localhost:4100",
+			"type": "any"
+		},
+		{
+			"key": "baseURL3",
+			"value": "http://localhost:8000",
+			"type": "any"
+		},
+		{
+			"key": "baseURL4",
+			"value": "http://localhost:4000",
+			"type": "any"
+		},
+		{
+			"key": "baseURL5",
+			"value": "http://localhost:3335",
+			"type": "any"
+		},
+		{
+			"key": "baseURL6",
+			"value": "https://api.openweathermap.org",
+			"type": "any"
+		},
+		{
+			"key": "baseURL7",
+			"value": "http://localhost:3334",
+			"type": "any"
+		},
+		{
+			"key": "baseURL8",
+			"value": "http://localhost:3333",
+			"type": "any"
+		}
+	]
+}
